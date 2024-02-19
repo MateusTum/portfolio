@@ -2,7 +2,9 @@
     "home": "HOME",
     "about": "ABOUT",
     "skills": "SKILLS",
-    "projects": "PROJECTS",
+    "portfolio": "PORTFOLIO",
+    "myWork": "MY WORK",
+    "projects-title": "Projects",
     "contact": "CONTACT",
     "description": "Frontend & Backend Developer",
     "learnMore": "Learn More"

@@ -1,0 +1,37 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  --bs-navbar-toggler-border-color: transparent;
+  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+
+  .navlink {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: relative;
+    display: inline-block; // Ensure the nav-link can contain the absolute positioned pseudo-element
+    text-decoration: none; // Optional: Removes the underline from links
+
+    // Define the invisible bar as a pseudo-element
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0; // Position it at the bottom of the link
+      left: 0;
+      width: 0%; // Start with no width
+      height: 2px; // Thickness of the bar
+      background-color: white; // Color of the bar
+      transition: width 0.5s ease; // Smooth transition for the filling effect
+    }
+
+    // When hovering over the nav-link, expand the bar from left to right
+    &:hover::after {
+      width: 100%; // Fill the bar completely on hover
+    }
+
+  }
+
+  .navlink:hover {
+    color: white !important;
+    /* Change #ff0000 to your desired hover color */
+  }
+}

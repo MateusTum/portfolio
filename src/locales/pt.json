@@ -1,9 +1,11 @@
 {
     "home": "INÍCIO",
-    "about": "SOBRE",
+    "about": "QUEM SOU",
     "skills": "SKILLS",
-    "projects": "PROJETOS",
-    "contact": "CONTATO",
+    "portfolio": "PORTFÓLIO",
+    "myWork": "O QUE FAÇO",
+    "projects-title": "Projetos",
+    "contact": "FALE CONOSCO",
     "description": "Desenvolvedor Frontend & Backend",
     "learnMore": "Learn More"
   }
