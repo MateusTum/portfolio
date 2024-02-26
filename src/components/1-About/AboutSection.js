@@ -28,7 +28,7 @@ const AboutSection = () => {
       <div className={`${styles.rhombus3}`} />
       <Row className={`${styles.aboutTitle}`}>
         <Col className={inView ? `${styles.animatedH2}` : "invisible"}>
-          <h2>about(Mateus)</h2>
+          <h2>{t("About.Header")}</h2>
         </Col>
       </Row>
 
@@ -42,23 +42,21 @@ const AboutSection = () => {
             sm={12}
             className={
               inView
-                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-lg-5`
+                ? `${styles.customDiv} slide-bottom-2 h-100 mt-lg-5 text-center`
                 : "invisible"
             }
           >
-            <h5 className="text-center">ABOUT ME</h5>
+            <h5>{t("About.About")}</h5>
             <hr />
-            Mateus Rosa Tum (Matt)
+            <span>Mateus Rosa Tum (Matt), 24</span>
             <br />
-            24, from Jataí - Goiás - Brazil
-            <h5 className="text-center mt-2">WHY SOFTWARE DEVELOPMENT</h5>
+            <span>{t("About.From")}</span>
+            <h5 className="mt-2">{t("About.WhySoftwareDevelopment")}</h5>
             <hr />
-            <p>
-              My software development journey began after living some time in
-              the USA.
+            <p className="text-center">
+              {t("About.Journey1")}
               <br />
-              When i returned to Brazil on mid 2023, I decided to study the vast
-              world of programming.
+              {t("About.Journey2")}
             </p>
           </Col>
 
@@ -67,32 +65,32 @@ const AboutSection = () => {
             md={12}
             sm={12}
             className={
-              inView ? `slide-bottom-1 ${styles.customDiv}` : "invisible"
+              inView ? `${styles.customDiv} slide-bottom-1` : "invisible"
             }
           >
-            <h5 className="text-center">I WORK WITH</h5>
+            <h5 className="text-center">{t("About.WorkWith")}</h5>
             <hr />
             <Row className="my-2 mx-auto w-100">
-              <h5 className="text-center">THESE LANGUAGES</h5>
+              <h5 className="text-center">{t("About.Languages")}</h5>
               <Col className="d-flex justify-content-center">
                 <LanguagesCol />
               </Col>
             </Row>
             <Row className="my-2 mx-auto">
-              <h5 className="text-center">THESE FRAMEWORKS</h5>
+              <h5 className="text-center">{t("About.Frameworks")}</h5>
               <Col className="d-flex justify-content-center">
                 <FrameworksCol />
               </Col>
             </Row>
             <Row className="my-2 mx-auto">
-              <h5 className="text-center">THESE LIBS</h5>
+              <h5 className="text-center">{t("About.Libs")}</h5>
               <Col className="d-flex justify-content-center">
                 <LibsCol />
               </Col>
             </Row>
 
             <Row className="my-auto mx-auto">
-              <h5 className="text-center">THESE DATABASES</h5>
+              <h5 className="text-center">{t("About.Databases")}</h5>
               <Col className="d-flex justify-content-center">
                 <DatabasesCol />
               </Col>
@@ -107,21 +105,21 @@ const AboutSection = () => {
                 : "invisible"
             }
           >
-            <h5 className="text-center">I SPEAK</h5>
+            <h5 className="text-center">{t("About.Speaks")}</h5>
             <hr />
             <ul>
-              <li>Brazilian Portuguese - Native</li>
-              <li>English - Fluent</li>
+              <li>{t("About.Portuguese")}</li>
+              <li>{t("About.English")}</li>
             </ul>
 
-            <h5 className="text-center mt-2">I LIKE TO</h5>
+            <h5 className="text-center mt-2">{t("About.Likes")}</h5>
             <hr />
             <ul>
-              <li>Play Dota</li>
-              <li>Do clay sculpting</li>
-              <li>Read books</li>
-              <li>Watch Fantasy/Sci-Fi movies</li>
-              <li>And i love Rick and Morty</li>
+              <li>{t("About.Dota")}</li>
+              <li>{t("About.Clay")}</li>
+              <li>{t("About.Books")}</li>
+              <li>{t("About.Watch")}</li>
+              <li>{t("About.RickAndMorty")}</li>
             </ul>
           </Col>
         </Row>

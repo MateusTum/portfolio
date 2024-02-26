@@ -1,11 +1,32 @@
 {
   "Presentation": {
     "Occupation": "JUNIOR SOFTWARE DEVELOPER"
-
   },
 
   "About": {
+    "Header": "About(Mateus)",
+    "Journey1": "My software development journey began after living some time in the USA.",
+    "Journey2": "When i returned to Brazil on mid 2023, I decided to study the vast world of programming.",
+    "About": "ABOUT ME",
+    "From": "from Jataí - Goiás - Brazil",
+    "WhySoftwareDevelopment": "WHY SOFTWARE DEVELOPMENT",
+    "WorkWith": "I WORK WITH",
+    "Languages": "THESE LANGUAGES",
+    "Frameworks": "THESE FRAMEWORKS",
+    "Libs": "THESE LIBS",
+    "Databases": "THESE DATABASES",
 
+
+    "Speaks": "I SPEAK",
+    "Portuguese": "Brazilian Portuguese - Native",
+    "English": "English - Fluent",
+
+    "Likes": "I LIKE TO",
+    "Dota": "Play Dota",
+    "Clay": "Do clay sculpting",
+    "Books": "Read books",
+    "Watch": "Watch Fantasy/Sci-Fi movies",
+    "RickAndMorty": "And i love Rick and Morty"
   },
 
   "MyWork": {

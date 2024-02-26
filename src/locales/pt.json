@@ -5,7 +5,27 @@
   },
 
   "About": {
+    "Header": "Sobre(Mateus)",
+    "Journey1": "Minha jornada de desenvolvimento de software começou depois de morar algum tempo nos EUA.",
+    "Journey2": "Quando voltei ao Brasil em meados de 2023, decidi estudar o vasto mundo da programação.",
+    "About": "SOBRE MIM",
+    "From": "de Jataí - Goiás - Brasil",
+    "WhySoftwareDevelopment": "POR QUE PROGRAMAÇÃO",
+    "WorkWith": "TRABALHO COM",
+    "Languages": "ESSAS LINGUAS",
+    "Frameworks": "ESSES FRAMEWORKS",
+    "Libs": "ESSAS LIBS",
+    "Databases": "ESSAS DATA-BASES",
 
+    "Speaks": "EU FALO",
+    "Portuguese": "Português brasileiro - Nativo",
+    "English": "Inglês - Fluente",
+    "Likes": "EU GOSTO DE",
+    "Dota": "Jogar Dota",
+    "Clay": "Esculpir em argila",
+    "Books": "Ler livros",
+    "Watch": "Assistir filmes de fantasia ou ficção ciêntifica",
+    "RickAndMorty": "E eu amo Rick and Morty"
   },
 
   "MyWork": {

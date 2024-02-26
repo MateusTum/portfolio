@@ -100,7 +100,7 @@ const PresentationSection = () => {
             <Col lg={12} md={12} sm={12} className="mt-5">
               <Col className={`${styles.hoverAnimation}`}>
                 <h1 className={animate ? `${styles.slideAnimatedName}` : ``}>
-                  MATEUS TUM (WIP)
+                  MATEUS TUM
                 </h1>
               </Col>
               <Col lg={6} className={`${styles.hoverAnimation}`}>
