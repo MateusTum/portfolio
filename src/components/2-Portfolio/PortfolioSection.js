@@ -60,7 +60,7 @@ const PortfolioSection = () => {
       <Container ref={ref} className={`${styles.portfolioContainer}`}>
         <Row className={`mx-auto ${tiles.tilesWrap}`}>
           {/* Project  00 */}
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={12}>
             <Link to={"/project/0"}>
               <div className={inView ? `slide-bottom-1` : `hidden`}>
                 <li>
@@ -99,7 +99,7 @@ const PortfolioSection = () => {
           </Col>
 
           {/* Project 01 */}
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={12}>
             <Link to={"/project/1"}>
               <div className={inView ? `slide-bottom-1` : `hidden`}>
                 <li>
@@ -129,7 +129,7 @@ const PortfolioSection = () => {
           </Col>
 
           {/* Project 02 */}
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={12}>
             <Link to={"/project/2"}>
               <div className={inView ? `slide-bottom-2` : `hidden`}>
                 <li>
@@ -171,7 +171,7 @@ const PortfolioSection = () => {
           </Col>
 
           {/* Project 03 */}
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={12}>
             <Link to={"/project/3"}>
               <div className={inView ? `slide-bottom-3` : `hidden`}>
                 <li>
@@ -210,7 +210,7 @@ const PortfolioSection = () => {
           </Col>
 
           {/* Project 04 */}
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={12}>
             <Link to={"/project/4"}>
               <div className={inView ? `slide-bottom-4` : `hidden`}>
                 <li>

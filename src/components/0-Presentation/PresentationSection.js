@@ -34,7 +34,8 @@ const PresentationSection = () => {
       <div className={`${styles.rhombus3}`} />
 
       {/* Colorful bar */}
-        <div
+        <Col
+        className="d-none d-lg-block"
           style={{
             zIndex: 2,
             position: "absolute",
@@ -51,8 +52,9 @@ const PresentationSection = () => {
         />
 
 
-          {/* Blackbackground */}
-        <div
+          {/* Black background */}
+        <Col
+                className="d-none d-lg-block"
           style={{
             zIndex: 1,
             position: "absolute",
@@ -67,22 +69,35 @@ const PresentationSection = () => {
           }}
         />
 
-
-        <Container
-          className={`${styles.presentationContainer}`}
+        {/* Black background small*/}
+        <Col
+                className="d-lg-none"
           style={{
             zIndex: 1,
             position: "absolute",
             right: `0px`,
             top: `0px`,
-            width: "100%",
-            height: "100%",
+            width: "140%",
+            height: "140%",
+            background: "rgb(0, 0, 0)",
+          }}
+        />
+
+
+        <Container
+          className={`${styles.presentationContainer}`}
+          style={{
+            zIndex: 2,
+            position: "relative",
+            right: `0%`,
+            top: `0%`,
+            justifyContent: "center",
             transition: "transform 1s ease-in-out", // Apply transition to transform property
             transform: `translate(-${topPosition}px, -${topPosition}px)`, // Use transform property for animation
           }}
         >
-          <Row className="h-100">
-            <Col lg={6} className="mt-5">
+          <Row className="mx-0">
+            <Col lg={12} md={12} sm={12} className="mt-5">
               <Col className={`${styles.hoverAnimation}`}>
                 <h1 className={animate ? `${styles.slideAnimatedName}` : ``}>
                   MATEUS TUM (WIP)
@@ -131,8 +146,7 @@ const PresentationSection = () => {
           >
             <Image
               src={`${process.env.PUBLIC_URL}/images/aipic.png`}
-              className="img-fluid"
-              width={"100%"}
+              width={"70%"}
               height={"auto"}
               alt="Description of the Pic"
             />

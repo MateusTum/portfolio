@@ -10,16 +10,15 @@
 }
 
 .aboutTitle {
-  position: absolute;
+  position: relative;
   z-index: 3;
   top: 0%;
-  right: 50%;
+  text-align: center;
   opacity: 80%;
-  transform: translate(50%); /* Adjust for centering and rotation */
   h2 {
-    padding-top: 2%;
+    padding-top: 4%;
     color: white;
-    font-size: 6.5em;
+    font-size: 3.5em;
     font-family: "Ropa Sans", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -33,10 +32,14 @@
 
 .aboutContainer {
   position: relative;
-  padding-top: 10%;
+  padding-top: 10px;
   padding-bottom: 5%;
   z-index: 2;
   min-height: 100%;
+  svg {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 @keyframes slideH2 {
@@ -74,7 +77,6 @@
 }
 
 .rhombus1 {
-  margin-top: 0%;
   width: 25em; /* Adjust width as needed */
   height: 25em; /* Adjust height as needed */
   z-index: 2;
@@ -85,11 +87,10 @@
   transform: translate(-50%, -50%) rotate(45deg); /* Adjust for centering and rotation */
   border: 5px solid transparent; /* Adjust border thickness and color as needed */
   border-image: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); /* Apply gradient to border */
-    border-image-slice: 1; /* Ensure the gradient covers the entire border */
+  border-image-slice: 1; /* Ensure the gradient covers the entire border */
 }
 
 .rhombus2 {
-  margin-top: 0%;
   width: 35em; /* Adjust width as needed */
   height: 35em; /* Adjust height as needed */
   background-color: rgba(0, 0, 0, 0.75);
@@ -104,7 +105,6 @@
 }
 
 .rhombus3 {
-  margin-top: 0%;
   width: 45em; /* Adjust width as needed */
   height: 45em; /* Adjust height as needed */
   background-color: rgba(0, 0, 0, 0.75);

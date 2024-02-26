@@ -26,21 +26,23 @@ const AboutSection = () => {
       <div className={`${styles.rhombus1}`} />
       <div className={`${styles.rhombus2}`} />
       <div className={`${styles.rhombus3}`} />
-      <div className={`${styles.aboutTitle}`}>
-        <div className={inView ? `${styles.animatedH2}` : "invisible"}>
+      <Row className={`${styles.aboutTitle}`}>
+        <Col className={inView ? `${styles.animatedH2}` : "invisible"}>
           <h2>about(Mateus)</h2>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
       <Container className={`${styles.aboutContainer}`}>
         <Row
-          className={`d-flex justify-content-center mx-auto ${styles.aboutRow}`}
+          className={`d-flex justify-content-center mx-1 ${styles.aboutRow}`}
         >
           <Col
             lg={3}
+            md={12}
+            sm={12}
             className={
               inView
-                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-5`
+                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-lg-5`
                 : "invisible"
             }
           >
@@ -62,30 +64,38 @@ const AboutSection = () => {
 
           <Col
             lg={5}
+            md={12}
+            sm={12}
             className={
               inView ? `slide-bottom-1 ${styles.customDiv}` : "invisible"
             }
           >
             <h5 className="text-center">I WORK WITH</h5>
             <hr />
-            <Row className="d-flex justify-content-center my-auto">
+            <Row className="my-2 mx-auto w-100">
               <h5 className="text-center">THESE LANGUAGES</h5>
-
-              <LanguagesCol />
-
+              <Col className="d-flex justify-content-center">
+                <LanguagesCol />
+              </Col>
             </Row>
-            <Row className="d-flex justify-content-center my-2">
+            <Row className="my-2 mx-auto">
               <h5 className="text-center">THESE FRAMEWORKS</h5>
-              <FrameworksCol />
+              <Col className="d-flex justify-content-center">
+                <FrameworksCol />
+              </Col>
             </Row>
-            <Row className="d-flex justify-content-center my-auto">
+            <Row className="my-2 mx-auto">
               <h5 className="text-center">THESE LIBS</h5>
-              <LibsCol />
+              <Col className="d-flex justify-content-center">
+                <LibsCol />
+              </Col>
             </Row>
 
-            <Row className="d-flex justify-content-center my-2">
+            <Row className="my-auto mx-auto">
               <h5 className="text-center">THESE DATABASES</h5>
-              <DatabasesCol />
+              <Col className="d-flex justify-content-center">
+                <DatabasesCol />
+              </Col>
             </Row>
           </Col>
 
@@ -93,7 +103,7 @@ const AboutSection = () => {
             lg={3}
             className={
               inView
-                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-5`
+                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-lg-5`
                 : "invisible"
             }
           >
