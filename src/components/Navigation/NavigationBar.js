@@ -1,11 +1,20 @@
+import React, { useEffect } from 'react';
 import Container from "react-bootstrap/Container";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import styles from "./NavigationBar.module.scss";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavigationBar() {
   const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if (localStorage.getItem("language"))  {
+      i18n.changeLanguage(localStorage.getItem("language"))
+    } else {
+      i18n.changeLanguage("en")
+    }
+  }, []); // The empty array ensures this effect runs only once after initial mount
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -42,20 +51,20 @@ function NavigationBar() {
       <Navbar data-bs-theme="dark" className={`${styles.navbar} p-0`} fixed="top" >
         <Container>
           <Nav className="ms-auto">
-            <Nav.Link className={`${styles.navlink}`} href="#home">
-              {t("home")}
+            <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {t("Navbar.Home")}
             </Nav.Link>
-            <Nav.Link className={`${styles.navlink}`} href="#about">
-              {t("about")}
+            <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {t("Navbar.About")}
             </Nav.Link>
-            <Nav.Link className={`${styles.navlink}`} href="#skills">
-              {t("myWork")}
+            <Nav.Link as={Link} className={`${styles.navlink}`} to="/projects">
+              {t("Navbar.Portfolio")}
             </Nav.Link>
-            <Nav.Link className={`${styles.navlink}`} href="#projects">
-              {t("portfolio")}
+            <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {t("Navbar.MyWork")}
             </Nav.Link>
-            <Nav.Link className={`${styles.navlink}`} href="#contact">
-              {t("contact")}
+            <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {t("Navbar.Contact")}
             </Nav.Link>
           </Nav>
           <NavDropdown

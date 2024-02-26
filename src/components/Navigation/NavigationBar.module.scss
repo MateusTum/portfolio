@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(2px);
   --bs-navbar-toggler-border-color: transparent;
   --bs-navbar-toggler-border-radius: var(--bs-border-radius);
@@ -19,7 +19,7 @@
       left: 0;
       width: 0%; // Start with no width
       height: 2px; // Thickness of the bar
-      background-color: white; // Color of the bar
+      background-color: rgba(255, 0, 0, 0.8); // Color of the bar
       transition: width 0.5s ease; // Smooth transition for the filling effect
     }
 
@@ -31,7 +31,7 @@
   }
 
   .navlink:hover {
-    color: white !important;
+    color: rgba(255, 0, 0, 0.8) !important;
     /* Change #ff0000 to your desired hover color */
   }
 }
