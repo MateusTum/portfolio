@@ -1,6 +1,8 @@
 @import "../../styles/variables";
 
 footer {
+    position: relative;
+    z-index: auto;
     background-color: $primary-background-color;
     margin-top: auto;
     padding: 1%;

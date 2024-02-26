@@ -47,17 +47,17 @@ const PortfolioSection = () => {
   const { t, i18n } = useTranslation();
 
   const { ref, inView } = useInView({
-    threshold: 1,
+    threshold: 0.4,
     triggerOnce: true,
   });
 
   return (
-    <Container className={`${styles.portfolioBackContainer}`} fluid>
+    <Container ref={ref} className={`${styles.portfolioBackContainer}`} fluid>
       <div className={inView ? `slideTitleAnimation` : `hidden`}>
         <CustomTitle inView={inView} />
       </div>
 
-      <Container ref={ref} className={`${styles.portfolioContainer}`}>
+      <Container className={`${styles.portfolioContainer}`}>
         <Row className={`mx-auto ${tiles.tilesWrap}`}>
           {/* Project  00 */}
           <Col lg={3} md={6} sm={12}>
