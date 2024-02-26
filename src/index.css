@@ -30,3 +30,7 @@ code {
   animation: blink 1s infinite; /* Apply the blinking animation */
   opacity: 0; /* Start with dots invisible */
 }
+
+[data-bs-theme=dark] {
+  --bs-body-bg: #000000;
+}
