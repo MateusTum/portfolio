@@ -11,13 +11,13 @@ function Footer() {
 
   return (
     <footer className="border-top">
-      <Row className="justify-content-between align-items-center ">
-        <Col md={6} className="d-flex align-items-center">
-          <span className="ms-3 mb-3 mb-md-0 text-body-secondary">
+      <Row className="d-flex">
+        <Col className="d-flex justify-content-center justify-content-sm-start">
+          <span className="mb-0 text-body-secondary">
             © 2024 Mateus Tum
           </span>
         </Col>
-        <Col md={6} className="justify-content-end d-flex">
+        <Col className="d-flex justify-content-center justify-content-sm-end">
           <ul className="nav">
             <li className="me-3">
               <a className="text-body-secondary" href="https://github.com/MateusTum">
