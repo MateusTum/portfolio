@@ -98,9 +98,6 @@ const AboutSection = () => {
             <Row className="d-flex justify-content-center my-2">
               <h5 className="text-center">THESE FRAMEWORKS</h5>
               <Col lg={2} className="text-center m-1">
-                <ReactIcon width={40} height={40} />
-              </Col>
-              <Col lg={2} className="text-center m-1">
                 <DjangoIcon width={40} height={40} />
               </Col>
               <Col lg={2} className="text-center m-1">
@@ -109,6 +106,9 @@ const AboutSection = () => {
             </Row>
             <Row className="d-flex justify-content-center my-auto">
               <h5 className="text-center">THESE LIBS</h5>
+              <Col lg={2} className="text-center m-1">
+                <ReactIcon width={40} height={40} />
+              </Col>
               <Col lg={2} className="text-center m-1">
                 <BootstrapIcon width={40} height={40} />
               </Col>
