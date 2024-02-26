@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./Footer.module.scss";
+import "./Footer.scss";
 import GithubIcon from "../SVGS/GithubIcon";
 import InstagramIcon from "../SVGS/InstagramIcon";
 import LinkedinIcon from "../SVGS/LinkedinIcon";

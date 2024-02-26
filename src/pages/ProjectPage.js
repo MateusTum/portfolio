@@ -5,7 +5,7 @@ import SocialProject from "../components/Projects/00-Social/SocialProject";
 const Project = () => {
     const { projectId } = useParams();
 
-    if (projectId == "0") {
+    if (projectId === "0") {
         return (
             <SocialProject />
         );
