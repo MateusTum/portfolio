@@ -3,6 +3,7 @@ import PresentationSection from "../components/0-Presentation/PresentationSectio
 import AboutSection from "../components/1-About/AboutSection";
 import PortfolioSection from "../components/2-Portfolio/PortfolioSection";
 import MyWorkSection from "../components/3-MyWork/MyWorkSection";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   
@@ -12,6 +13,7 @@ const Home = () => {
         <AboutSection />
         <PortfolioSection />
         <MyWorkSection />
+        <Footer />
         </>
     );
 
