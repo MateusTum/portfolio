@@ -44,7 +44,7 @@ const AboutSection = () => {
                 : "invisible"
             }
           >
-            <h5 className="text-center">WHO AM I</h5>
+            <h5 className="text-center">ABOUT ME</h5>
             <hr />
             Mateus Rosa Tum (Matt)
             <br />
