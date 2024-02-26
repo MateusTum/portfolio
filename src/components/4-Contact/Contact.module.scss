@@ -1,0 +1,49 @@
+.myWorkBackContainer {
+    position: relative;
+    font-family: "Ropa Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+
+    h2 {
+        padding-top: 2%;
+        padding-left: 5%;
+        font-size: 2.5em;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.myWorkContainer {
+    padding-top: 55px;
+    scroll-snap-align: start;
+    z-index: 1;
+}
+
+.backgroundShape {
+    padding-top: 55px;
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(50% 10%, 50% 20%, 0 20%, 0 10%);
+    background: rgb(119,181,255);
+    background: linear-gradient(90deg, rgba(119,181,255,1) 0%, rgba(0,117,255,1) 100%);
+}
+
+@keyframes slideH2 {
+    from {
+      transform: translateX(-100%);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .animatedH2 {
+    z-index: 0;
+    animation: slideH2 1.5s ease-out forwards;
+    opacity: 100%;
+  }
