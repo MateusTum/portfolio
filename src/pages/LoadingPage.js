@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import CloudsSvg from "./Clouds";
+import { Container, Row, Col } from "react-bootstrap";
+import CloudsSvg from "../components/SVGS/Clouds";
 
 const LoadingPage = () => {
   return (

@@ -5,7 +5,7 @@ import Home from "./pages/HomePage";
 import Projects from "./pages/ProjectsPage";
 import NavigationBar from "./components/Navigation/NavigationBar";
 import { useTranslation } from "react-i18next";
-import LoadingPage from "./LoadingPage";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
   // Need to fix the language to not refresh everytime
