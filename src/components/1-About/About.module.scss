@@ -1,0 +1,130 @@
+
+
+.aboutBackContainer {
+  position: relative;
+  font-family: "Ropa Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: auto;
+  z-index: 8;
+}
+
+.aboutTitle {
+  position: absolute;
+  z-index: 3;
+  top: 0%;
+  right: 50%;
+  opacity: 80%;
+  transform: translate(50%); /* Adjust for centering and rotation */
+  h2 {
+    padding-top: 2%;
+    color: white;
+    font-size: 6.5em;
+    font-family: "Ropa Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+}
+
+.aboutRow {
+  margin-top: 0%;
+  z-index: 6;
+}
+
+.aboutContainer {
+  position: relative;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  z-index: 2;
+  min-height: 100%;
+}
+
+@keyframes slideH2 {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animatedH2 {
+  z-index: 0;
+  animation: slideH2 1s ease-out forwards;
+  opacity: 100%;
+}
+
+@keyframes slidePicture {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.customDiv {
+  background-color: rgba(22, 22, 22);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  position: relative;
+}
+
+.rhombus1 {
+  margin-top: 0%;
+  width: 25em; /* Adjust width as needed */
+  height: 25em; /* Adjust height as needed */
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  left: 50%; /* Move the left edge to the center of the screen */
+  top: 50%; /* Move the top edge to the center of the screen */
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjust for centering and rotation */
+  border: 5px solid transparent; /* Adjust border thickness and color as needed */
+  border-image: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); /* Apply gradient to border */
+    border-image-slice: 1; /* Ensure the gradient covers the entire border */
+}
+
+.rhombus2 {
+  margin-top: 0%;
+  width: 35em; /* Adjust width as needed */
+  height: 35em; /* Adjust height as needed */
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  position: absolute;
+  left: 50%; /* Move the left edge to the center of the screen */
+  top: 50%; /* Move the top edge to the center of the screen */
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjust for centering and rotation */
+  border: 5px solid transparent; /* Adjust border thickness and color as needed */
+  border-image: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); /* Apply gradient to border */
+    border-image-slice: 1; /* Ensure the gradient covers the entire border */
+}
+
+.rhombus3 {
+  margin-top: 0%;
+  width: 45em; /* Adjust width as needed */
+  height: 45em; /* Adjust height as needed */
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: 0;
+  left: 50%; /* Move the left edge to the center of the screen */
+  top: 50%; /* Move the top edge to the center of the screen */
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjust for centering and rotation */
+  border: 5px solid transparent; /* Adjust border thickness and color as needed */
+  border-image: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); /* Apply gradient to border */
+    border-image-slice: 1; /* Ensure the gradient covers the entire border */
+}
+
+.bottomTriangle {
+  position: absolute;
+  z-index: -1;
+  top: 99%; /* Positions the div right after the container ends */
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  clip-path: polygon(50% 10%, 40% 0, 60% 0);
+}
+
