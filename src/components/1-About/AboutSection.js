@@ -3,17 +3,12 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import styles from "./About.module.scss";
 import { useInView } from "react-intersection-observer";
-import BootstrapIcon from "../SVGS/BootstrapIcon";
-import DjangoIcon from "../SVGS/DjangoIcon";
-import HtmlIcon from "../SVGS/HtmlIcon";
-import JSIcon from "../SVGS/JavaScriptIcon";
-import PythonIcon from "../SVGS/PythonIcon";
-import ReactIcon from "../SVGS/ReactIcon";
-import FlaskIcon from "../SVGS/FlaskIcon";
-import SassIcon from "../SVGS/SassIcon";
-import CssIcon from "../SVGS/CssIcon";
-import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
-import SQLiteIcon from "../SVGS/SQLiteIcon";
+
+// Import cols
+import LanguagesCol from "./LanguagesCol";
+import FrameworksCol from "./FrameworksCol";
+import DatabasesCol from "./DatabasesCol";
+import LibsCol from "./LibsCol";
 
 const AboutSection = () => {
   const { t, i18n } = useTranslation();
@@ -75,53 +70,22 @@ const AboutSection = () => {
             <hr />
             <Row className="d-flex justify-content-center my-auto">
               <h5 className="text-center">THESE LANGUAGES</h5>
-              <Col lg={2} className="text-center m-1">
-                <JSIcon width={40} height={40} />
-              </Col>
 
-              <Col lg={2} className="text-center m-1">
-                <HtmlIcon width={40} height={40} />
-              </Col>
+              <LanguagesCol />
 
-              <Col lg={2} className="text-center m-1">
-                <SassIcon width={40} height={40} />
-              </Col>
-
-              <Col lg={2} className="text-center m-1">
-                <CssIcon width={40} height={40} />
-              </Col>
-
-              <Col lg={2} className="text-center m-1">
-                <PythonIcon width={40} height={40} />
-              </Col>
             </Row>
             <Row className="d-flex justify-content-center my-2">
               <h5 className="text-center">THESE FRAMEWORKS</h5>
-              <Col lg={2} className="text-center m-1">
-                <DjangoIcon width={40} height={40} />
-              </Col>
-              <Col lg={2} className="text-center m-1">
-                <FlaskIcon width={40} height={40} />
-              </Col>
+              <FrameworksCol />
             </Row>
             <Row className="d-flex justify-content-center my-auto">
               <h5 className="text-center">THESE LIBS</h5>
-              <Col lg={2} className="text-center m-1">
-                <ReactIcon width={40} height={40} />
-              </Col>
-              <Col lg={2} className="text-center m-1">
-                <BootstrapIcon width={40} height={40} />
-              </Col>
+              <LibsCol />
             </Row>
 
             <Row className="d-flex justify-content-center my-2">
               <h5 className="text-center">THESE DATABASES</h5>
-              <Col lg={2} className="text-center m-1">
-                <PostgreeSqlIcon width={40} height={40} />
-              </Col>
-              <Col lg={2} className="text-center m-1">
-                <SQLiteIcon width={55} height={40} />
-              </Col>
+              <DatabasesCol />
             </Row>
           </Col>
 
