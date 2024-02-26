@@ -17,15 +17,15 @@ const PresentationSection = () => {
 
     useEffect(() => {
       const handleScroll = () => {
-        if (window.scrollY > 150) {
+        if (document.body.scrollTop > 150) {
           setTopPosition(500);
         } else {
           setTopPosition(0);
         }
       };
-      window.addEventListener("scroll", handleScroll);
+      document.body.addEventListener("scroll", handleScroll);
       return () => {
-        window.removeEventListener("scroll", handleScroll);
+        document.body.removeEventListener("scroll", handleScroll);
       };
     }, []);
 
@@ -137,7 +137,8 @@ const PresentationSection = () => {
       fluid
       className={`${styles.presentationBackContainer} px-0`}
     >
-      <div
+      {/* My picture here */}
+      {/* <div
             className={
               inView
                 ? `${styles.animatedPicture}`
@@ -150,7 +151,7 @@ const PresentationSection = () => {
               height={"auto"}
               alt="Description of the Pic"
             />
-          </div>
+          </div> */}
       <ScrollMovingDiv />
       <div className={`${styles.backgroundFilter}`} />
       <div className={`${styles.backgroundGif}`}>
