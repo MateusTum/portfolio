@@ -1,11 +1,32 @@
 {
-    "home": "INÍCIO",
-    "about": "QUEM SOU",
-    "skills": "SKILLS",
-    "portfolio": "PORTFÓLIO",
-    "myWork": "O QUE FAÇO",
-    "projects-title": "Projetos",
-    "contact": "FALE CONOSCO",
-    "description": "Desenvolvedor Frontend & Backend",
-    "learnMore": "Learn More"
+  "Presentation": {
+    "Occupation": "DESENVOLVEDOR DE SOFTWARE JUNIOR"
+
+  },
+
+  "About": {
+
+  },
+
+  "MyWork": {
+    "Title": "MEU TRABALHO"
+
+  },
+
+  "Portfolio": {
+    "Title": "MEU PORTFÓLIO"
+
+  },
+
+  "Contact": {
+
+  },
+
+  "Navbar": {
+    "Home": "INÍCIO",
+    "About": "SOBRE MIM",
+    "MyWork": "MEU TRABALHO",
+    "Portfolio": "PORTFÓLIO",
+    "Contact": "FALE CONOSCO"
+  }
   }

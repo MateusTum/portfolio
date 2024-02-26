@@ -1,11 +1,32 @@
 {
-    "home": "HOME",
-    "about": "ABOUT",
-    "skills": "SKILLS",
-    "portfolio": "PORTFOLIO",
-    "myWork": "MY WORK",
-    "projects-title": "Projects",
-    "contact": "CONTACT",
-    "description": "Frontend & Backend Developer",
-    "learnMore": "Learn More"
+  "Presentation": {
+    "Occupation": "JUNIOR SOFTWARE DEVELOPER"
+
+  },
+
+  "About": {
+
+  },
+
+  "MyWork": {
+    "Title": "MY WORK"
+
+  },
+
+  "Portfolio": {
+    "Title": "MY PORTFOLIO"
+
+  },
+
+  "Contact": {
+
+  },
+
+  "Navbar": {
+    "Home": "HOME",
+    "About": "ABOUT ME",
+    "MyWork": "MY WORK",
+    "Portfolio": "PORTFOLIO",
+    "Contact": "CONTACT"
+  }
   }
