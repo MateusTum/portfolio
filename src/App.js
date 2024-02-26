@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage";
-import Projects from "./pages/ProjectsPage";
+import Project from "./pages/ProjectPage";
 import NavigationBar from "./components/Navigation/NavigationBar";
 import { useTranslation } from "react-i18next";
 import LoadingPage from "./pages/LoadingPage";
@@ -37,7 +37,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/project/:projectId" element={<Project />} />
         {/* Add more routes as needed */}
       </Routes>
     </HashRouter>
