@@ -1,12 +1,22 @@
 
-
 .aboutBackContainer {
   position: relative;
   font-family: "Ropa Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  height: auto;
+  height: 100%;
   z-index: 8;
+}
+
+.aboutContainer {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 5%;
+  z-index: 2;
+  svg {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .aboutTitle {
@@ -28,18 +38,6 @@
 .aboutRow {
   margin-top: 0%;
   z-index: 6;
-}
-
-.aboutContainer {
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 5%;
-  z-index: 2;
-  min-height: 100%;
-  svg {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 }
 
 @keyframes slideH2 {

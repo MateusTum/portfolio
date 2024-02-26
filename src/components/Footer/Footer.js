@@ -10,8 +10,6 @@ function Footer() {
   const { t, i18n } = useTranslation();
 
   return (
-    <Container 
-    fluid>
       <footer className="border-top mt-2">
         <Row className="d-flex">
           <Col className="d-flex justify-content-center justify-content-sm-start">
@@ -47,7 +45,6 @@ function Footer() {
           </Col>
         </Row>
       </footer>
-    </Container>
   );
 }
 

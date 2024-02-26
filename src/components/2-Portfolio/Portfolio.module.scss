@@ -1,21 +1,18 @@
 @import "../../styles/variables";
 
 .portfolioBackContainer {
-  z-index: 6;
-  background-color: $secondary-background-color;
   position: relative;
-  font-family: "Ropa Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   height: 100%;
+  z-index: 8;
 }
 
 .portfolioContainer {
   position: relative;
-  z-index: 2;
   padding-top: 250px;
-  min-height: 100vh;
+  padding-bottom: 5%;
+  z-index: 4;
   height: 100%;
+  min-height: max-content;
 }
 
 .tab {
