@@ -1,0 +1,95 @@
+@keyframes slideRight {
+    from {
+      transform: translateX(-100%);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-right-1 {
+    animation: slideRight 1.5s ease-out forwards;
+  }
+  
+  .slide-right-2 {
+    animation: slideRight 2s ease-out forwards;
+  }
+  
+  .slide-right-3 {
+    animation: slideRight 2.5s ease-out forwards;
+  }
+  
+  .slide-right-4 {
+    animation: slideRight 3s ease-out forwards;
+  }
+  
+  .slide-right-5 {
+    animation: slideRight 4.5s ease-out forwards;
+  }
+  
+  .slide-right-6 {
+    animation: slideRight 6s ease-out forwards;
+  }
+  
+  @keyframes slideBottom {
+    from {
+      opacity: 0%;
+      transform: translateY(100%);
+    }
+  
+    to {
+      opacity: 100%;
+      transform: translatey(0);
+    }
+  }
+  
+  .slide-bottom-1 {
+    animation: slideBottom 2.5s ease-out forwards;
+  }
+  
+  .slide-bottom-2 {
+    animation: slideBottom 3s ease-out forwards;
+  }
+  
+  .slide-bottom-3 {
+    animation: slideBottom 3.5s ease-out forwards;
+  }
+  
+  .slide-bottom-4 {
+    animation: slideBottom 4s ease-out forwards;
+  }
+  
+  .slide-bottom-5 {
+    animation: slideBottom 4.5s ease-out forwards;
+  }
+  
+  .slide-bottom-6 {
+    animation: slideBottom 5s ease-out forwards;
+  }
+  
+  
+  @keyframes slideTitle {
+    from {
+      transform: translateX(-600px);
+    }
+  
+    to {
+      transform: translateX(0px);
+    }
+  }
+  
+  .slideTitleAnimation {
+    cursor: pointer !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: slideTitle 1.5s ease-out forwards;
+  }
+  
+  .hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+  }
