@@ -11,9 +11,7 @@ import HtmlIcon from "../SVGS/HtmlIcon";
 import JSIcon from "../SVGS/JavaScriptIcon";
 import PythonIcon from "../SVGS/PythonIcon";
 import ReactIcon from "../SVGS/ReactIcon";
-import FlaskIcon from "../SVGS/FlaskIcon";
 import SassIcon from "../SVGS/SassIcon";
-import CssIcon from "../SVGS/CssIcon";
 import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
 import SQLiteIcon from "../SVGS/SQLiteIcon";
 import { Link } from "react-router-dom";
@@ -44,7 +42,7 @@ const CustomTitle = ({ inView }) => {
 };
 
 const PortfolioSection = () => {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
 
   const { ref, inView } = useInView({
     threshold: 0.4,

@@ -31,59 +31,6 @@ const PresentationSection = () => {
 
     return (
       <>
-      <div className={`${styles.rhombus3}`} />
-
-      {/* Colorful bar */}
-        <Col
-        className="d-none d-lg-block"
-          style={{
-            zIndex: 2,
-            position: "absolute",
-            right: `0px`,
-            top: `0px`,
-            width: "140%",
-            height: "140%",
-            clipPath: "polygon(75% 0%, 80% 0%, 25% 100%, 20% 100%)",
-            background:
-              "linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(0, 0, 255, 1))",
-            transition: "transform 1s ease-in-out", // Apply transition to transform property
-            transform: `translate(-${topPosition}px, -${topPosition}px)`, // Use transform property for animation
-          }}
-        />
-
-
-          {/* Black background */}
-        <Col
-                className="d-none d-lg-block"
-          style={{
-            zIndex: 1,
-            position: "absolute",
-            right: `0px`,
-            top: `0px`,
-            width: "140%",
-            height: "140%",
-            background: "rgb(0, 0, 0)",
-            clipPath: "polygon(0 0, 80% 0%, 20% 100%, 0% 100%)",
-            transition: "transform 1s ease-in-out", // Apply transition to transform property
-            transform: `translate(-${topPosition}px, -${topPosition}px)`, // Use transform property for animation
-          }}
-        />
-
-        {/* Black background small*/}
-        <Col
-                className="d-lg-none"
-          style={{
-            zIndex: 1,
-            position: "absolute",
-            right: `0px`,
-            top: `0px`,
-            width: "140%",
-            height: "140%",
-            background: "rgb(0, 0, 0)",
-          }}
-        />
-
-
         <Container
           className={`${styles.presentationContainer}`}
           style={{
@@ -97,7 +44,7 @@ const PresentationSection = () => {
           }}
         >
           <Row className="mx-0">
-            <Col lg={12} md={12} sm={12} className="mt-5">
+            <Col lg={10} md={12} sm={12} className="mt-5">
               <Col className={`${styles.hoverAnimation}`}>
                 <h1 className={animate ? `${styles.slideAnimatedName}` : ``}>
                   MATEUS TUM

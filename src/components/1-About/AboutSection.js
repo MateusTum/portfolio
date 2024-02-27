@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import styles from "./About.module.scss";
 import { useInView } from "react-intersection-observer";

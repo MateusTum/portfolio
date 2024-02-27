@@ -1,14 +1,11 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 import GithubIcon from "../SVGS/GithubIcon";
 import InstagramIcon from "../SVGS/InstagramIcon";
 import LinkedinIcon from "../SVGS/LinkedinIcon";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 function Footer() {
-  const { t, i18n } = useTranslation();
-
   return (
       <footer className="border-top mt-2">
         <Row className="d-flex">

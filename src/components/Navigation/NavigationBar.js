@@ -14,7 +14,7 @@ function NavigationBar() {
     } else {
       i18n.changeLanguage("en");
     }
-  }, []); // The empty array ensures this effect runs only once after initial mount
+  }, []);
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
