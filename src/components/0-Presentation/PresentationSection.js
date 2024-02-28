@@ -12,25 +12,16 @@ const PresentationSection = () => {
     triggerOnce: true,
   });
 
-  function ScrollMovingDiv() {
-    const [topPosition, setTopPosition] = useState(0);
+  useEffect(() => {
+    setAnimate(true); // This will be set to true after the component mounts
+  }, []); // The empty dependency array ensures this effect runs only once after initial mount
 
-    useEffect(() => {
-      const handleScroll = () => {
-        if (document.body.scrollTop > 150) {
-          setTopPosition(500);
-        } else {
-          setTopPosition(0);
-        }
-      };
-      document.body.addEventListener("scroll", handleScroll);
-      return () => {
-        document.body.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
-
-    return (
-      <>
+  return (
+    <Container
+      ref={ref}
+      fluid
+      className={`${styles.presentationBackContainer} px-0`}
+    >
         <Container
           className={`${styles.presentationContainer}`}
           style={{
@@ -40,7 +31,6 @@ const PresentationSection = () => {
             top: `0%`,
             justifyContent: "center",
             transition: "transform 1s ease-in-out", // Apply transition to transform property
-            transform: `translate(-${topPosition}px, -${topPosition}px)`, // Use transform property for animation
           }}
         >
           <Row className="mx-0">
@@ -70,46 +60,6 @@ const PresentationSection = () => {
             </Col>
           </Row>
         </Container>
-      </>
-    );
-  }
-
-  useEffect(() => {
-    setAnimate(true); // This will be set to true after the component mounts
-  }, []); // The empty dependency array ensures this effect runs only once after initial mount
-
-  return (
-    <Container
-      ref={ref}
-      fluid
-      className={`${styles.presentationBackContainer} px-0`}
-    >
-      {/* My picture here */}
-      {/* <div
-            className={
-              inView
-                ? `${styles.animatedPicture}`
-                : `invisible`
-            }
-          >
-            <Image
-              src={`${process.env.PUBLIC_URL}/images/aipic.png`}
-              width={"70%"}
-              height={"auto"}
-              alt="Description of the Pic"
-            />
-          </div> */}
-      <ScrollMovingDiv />
-      <div className={`${styles.backgroundFilter}`} />
-      <div className={`${styles.backgroundGif}`}>
-        <Image
-          src={`${process.env.PUBLIC_URL}/images/Coding.gif`}
-          className="h-100"
-          width={"100%"}
-          height={"90%"}
-          alt="GIF Showing a lot of random code"
-        />
-      </div>
     </Container>
   );
 };
