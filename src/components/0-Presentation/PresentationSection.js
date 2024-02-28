@@ -17,11 +17,13 @@ const PresentationSection = () => {
   }, []); // The empty dependency array ensures this effect runs only once after initial mount
 
   return (
+    // Main container
     <Container
       ref={ref}
       fluid
       className={`${styles.presentationBackContainer} px-0`}
     >
+      {/* Sub container */}
         <Container
           className={`${styles.presentationContainer}`}
           style={{
@@ -33,8 +35,11 @@ const PresentationSection = () => {
             transition: "transform 1s ease-in-out", // Apply transition to transform property
           }}
         >
+          {/* Presentation text row */}
           <Row className="mx-auto">
             <Col lg={10} md={12} sm={12} className="mt-5">
+
+              {/* Mateus Tum */}
               <Col 
               lg={12}
               className={animate ? `${styles.slideAnimatedName}` : ``}>
@@ -43,6 +48,8 @@ const PresentationSection = () => {
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;Mateus Tum&nbsp;</span>
                 </h1>
               </Col>
+
+              {/* Occupation */}
               <Col 
               lg={12}
               md={12}
@@ -54,6 +61,8 @@ const PresentationSection = () => {
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;{t("Presentation.Occupation")}&nbsp;</span>
                 </h3>
               </Col>
+
+              {/* Front */}
               <Col 
               lg={6}
               className={animate ? `${styles.slideAnimatedName}` : ``}>
@@ -62,6 +71,8 @@ const PresentationSection = () => {
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;FRONTEND&nbsp;</span>
                 </h2>
               </Col>
+
+              {/* React */}
               <Col 
               lg={6}
               className={animate ? `${styles.slideAnimatedName}` : ``}>
@@ -70,6 +81,8 @@ const PresentationSection = () => {
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;REACT&nbsp;</span>
                 </h3>
               </Col>
+
+              {/* Back */}
               <Col 
               lg={6}
               className={animate ? `${styles.slideAnimatedName}` : ``}>
@@ -78,6 +91,8 @@ const PresentationSection = () => {
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;BACKEND&nbsp;</span>
                 </h2>
               </Col>
+
+              {/* Django */}
               <Col 
               lg={6}
               className={animate ? `${styles.slideAnimatedName}` : ``}>
