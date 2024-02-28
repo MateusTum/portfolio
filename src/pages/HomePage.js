@@ -6,17 +6,15 @@ import PortfolioSection from "../components/2-Portfolio/PortfolioSection";
 import Footer from "../components/Footer/Footer";
 
 const Home = () => {
-  
-    return (
-        <>
-        <PresentationSection />
-        <AboutSection />
-        <PortfolioSection />
-        {/* <MyWorkSection /> */}
-        <Footer />
-        </>
-    );
+  return (
+    <>
+      <PresentationSection />
+      <AboutSection />
+      <PortfolioSection />
+      {/* <MyWorkSection /> */}
+      <Footer />
+    </>
+  );
+};
 
-  };
-  
-  export default Home;
+export default Home;

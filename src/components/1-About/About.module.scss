@@ -1,3 +1,4 @@
+@import "../../styles/variables";
 
 .aboutBackContainer {
   position: relative;
@@ -70,8 +71,14 @@
   background-color: rgba(22, 22, 22);
   border-radius: 5px;
   padding: 10px;
-  margin: 5px;
   position: relative;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  h5 {
+    font-size: 1.3em;
+  }
 }
 
 .rhombus1 {
@@ -126,3 +133,31 @@
   clip-path: polygon(50% 10%, 40% 0, 60% 0);
 }
 
+.title {
+  padding: 5px 5px 5px 5px;
+  background-color: $secondary-color;
+  position: relative;
+  top: -20px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+.svgsBackground {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  width: max-content;
+  height: fit-content;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: $secondary-color;
+}
+
+.techTitle {
+  position: absolute;
+  top: -12.5px;
+  background: rgba(22, 22, 22);
+  height: fit-content;
+  width: max-content;
+}

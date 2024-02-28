@@ -46,13 +46,19 @@ const AboutSection = () => {
                 : "invisible"
             }
           >
-            <h5>{t("About.About")}</h5>
-            <hr />
-            <span>Mateus Rosa Tum (Matt), 24</span>
-            <br />
-            <span>{t("About.From")}</span>
-            <h5 className="mt-2">{t("About.WhySoftwareDevelopment")}</h5>
-            <hr />
+            <div className={`${styles.title}`}>
+              <h5 className="my-auto">{t("About.About")}</h5>
+            </div>
+
+            <p className="text-center pb-2">
+              Mateus Rosa Tum (Matt), 24
+              <br />
+              {t("About.From")}
+            </p>
+
+            <div className={`${styles.title} mt-4`}>
+              <h5 className="mt-2">{t("About.WhySoftwareDevelopment")}</h5>
+            </div>
             <p className="text-center">
               {t("About.Journey1")}
               <br />
@@ -68,32 +74,51 @@ const AboutSection = () => {
               inView ? `${styles.customDiv} slide-bottom-1` : "invisible"
             }
           >
-            <h5 className="text-center">{t("About.WorkWith")}</h5>
-            <hr />
-            <Row className="my-2 mx-auto w-100">
-              <h5 className="text-center">{t("About.Languages")}</h5>
-              <Col className="d-flex justify-content-center">
+            <div className={`${styles.title}`}>
+              <h5 className="text-center my-auto">{t("About.WorkWith")}</h5>
+            </div>
+            <Row className="mx-auto w-100 justify-content-center">
+              <div
+                className={`${styles.svgsBackground} d-flex justify-content-center`}
+              >
+                <div className={`${styles.techTitle}`}>
+                  <h5 className="text-center">{t("About.Languages")}</h5>
+                </div>
                 <LanguagesCol />
-              </Col>
-            </Row>
-            <Row className="my-2 mx-auto">
-              <h5 className="text-center">{t("About.Frameworks")}</h5>
-              <Col className="d-flex justify-content-center">
-                <FrameworksCol />
-              </Col>
-            </Row>
-            <Row className="my-2 mx-auto">
-              <h5 className="text-center">{t("About.Libs")}</h5>
-              <Col className="d-flex justify-content-center">
-                <LibsCol />
-              </Col>
+              </div>
             </Row>
 
-            <Row className="my-auto mx-auto">
-              <h5 className="text-center">{t("About.Databases")}</h5>
-              <Col className="d-flex justify-content-center">
+            <Row className="my-4 mx-auto justify-content-center">
+              <div
+                className={`${styles.svgsBackground} d-flex justify-content-center`}
+              >
+                <div className={`${styles.techTitle}`}>
+                  <h5 className="text-center">{t("About.Frameworks")}</h5>
+                </div>
+                <FrameworksCol />
+              </div>
+            </Row>
+
+            <Row className="my-4 mx-auto justify-content-center">
+              <div
+                className={`${styles.svgsBackground} d-flex justify-content-center`}
+              >
+                <div className={`${styles.techTitle}`}>
+                  <h5 className="text-center">{t("About.Libs")}</h5>
+                </div>
+                <LibsCol />
+              </div>
+            </Row>
+
+            <Row className="my-4 mx-auto justify-content-center">
+              <div
+                className={`${styles.svgsBackground} d-flex justify-content-center`}
+              >
+                <div className={`${styles.techTitle}`}>
+                  <h5 className="text-center">{t("About.Databases")}</h5>
+                </div>
                 <DatabasesCol />
-              </Col>
+              </div>
             </Row>
           </Col>
 
@@ -105,15 +130,17 @@ const AboutSection = () => {
                 : "invisible"
             }
           >
-            <h5 className="text-center">{t("About.Speaks")}</h5>
-            <hr />
-            <ul>
+            <div className={`${styles.title}`}>
+              <h5 className="text-center my-auto">{t("About.Speaks")}</h5>
+            </div>
+            <ul className="pb-2">
               <li>{t("About.Portuguese")}</li>
               <li>{t("About.English")}</li>
             </ul>
 
-            <h5 className="text-center mt-2">{t("About.Likes")}</h5>
-            <hr />
+            <div className={`${styles.title} mt-4`}>
+              <h5 className="text-center my-auto">{t("About.Likes")}</h5>
+            </div>
             <ul>
               <li>{t("About.Dota")}</li>
               <li>{t("About.Clay")}</li>
