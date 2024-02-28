@@ -33,29 +33,58 @@ const PresentationSection = () => {
             transition: "transform 1s ease-in-out", // Apply transition to transform property
           }}
         >
-          <Row className="mx-0">
+          <Row className="mx-auto">
             <Col lg={10} md={12} sm={12} className="mt-5">
-              <Col className={`${styles.hoverAnimation}`}>
-                <h1 className={animate ? `${styles.slideAnimatedName}` : ``}>
-                  MATEUS TUM
+              <Col 
+              lg={12}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                <h1 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;Mateus Tum&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;Mateus Tum&nbsp;</span>
                 </h1>
               </Col>
-              <Col lg={6} className={`${styles.hoverAnimation}`}>
-                <h3 className={animate ? "slide-right-2" : ""}>
-                  {t("Presentation.Occupation")}
+              <Col 
+              lg={12}
+              md={12}
+              sm={12}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                                  
+                <h3 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;{t("Presentation.Occupation")}&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;{t("Presentation.Occupation")}&nbsp;</span>
                 </h3>
               </Col>
-              <Col lg={6} className={`${styles.hoverAnimation}`}>
-                <h2 className={animate ? "slide-right-3" : ""}>FRONTEND</h2>
+              <Col 
+              lg={6}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                <h2 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;FRONTEND&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;FRONTEND&nbsp;</span>
+                </h2>
               </Col>
-              <Col lg={6} className={`${styles.hoverAnimation}`}>
-                <h3 className={animate ? "slide-right-4" : ""}>REACT</h3>
+              <Col 
+              lg={6}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                <h3 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;REACT&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;REACT&nbsp;</span>
+                </h3>
               </Col>
-              <Col lg={6} className={`${styles.hoverAnimation}`}>
-                <h2 className={animate ? "slide-right-5" : ""}>BACKEND</h2>
+              <Col 
+              lg={6}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                <h2 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;BACKEND&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;BACKEND&nbsp;</span>
+                </h2>
               </Col>
-              <Col lg={6} className={`${styles.hoverAnimation}`}>
-                <h3 className={animate ? "slide-right-6" : ""}>DJANGO</h3>
+              <Col 
+              lg={6}
+              className={animate ? `${styles.slideAnimatedName}` : ``}>
+                <h3 className={`${styles.customName}`} data-text="Awesome">
+                  <span className={`${styles.actualText}`}>&nbsp;DJANGO&nbsp;</span>
+                  <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;DJANGO&nbsp;</span>
+                </h3>
               </Col>
             </Col>
           </Row>
