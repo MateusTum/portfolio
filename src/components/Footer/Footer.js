@@ -3,45 +3,33 @@ import "./Footer.scss";
 import GithubIcon from "../SVGS/GithubIcon";
 import InstagramIcon from "../SVGS/InstagramIcon";
 import LinkedinIcon from "../SVGS/LinkedinIcon";
-import { Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
+import "./Card.scss";
 
 function Footer() {
   return (
-      <footer className="border-top mt-2">
-        <Row className="d-flex">
-          <Col className="d-flex justify-content-center justify-content-sm-start">
-            <span className="mb-0 text-body-secondary">© 2024 Mateus Tum</span>
+    <footer className="border-top mt-2">
+      <Container className="text-center">
+        <Row>
+          <Col lg={12} className="d-flex justify-content-center">
+            <div className="footer-card d-flex justify-content-center">
+              <a className="social-link1" href="https://www.instagram.com/mateustum/">
+                <InstagramIcon width={35} height={35} />
+              </a>
+              <a className="social-link2" href="https://www.linkedin.com/in/mateus-rosa-tum-7b803a1b6">
+                <LinkedinIcon width={35} height={35} />
+              </a>
+              <a className="social-link3" href="https://github.com/MateusTum">
+                <GithubIcon width={35} height={35} />
+              </a>
+            </div>
           </Col>
-          <Col className="d-flex justify-content-center justify-content-sm-end">
-            <ul className="nav">
-              <li className="me-3">
-                <a
-                  className="text-body-secondary"
-                  href="https://github.com/MateusTum"
-                >
-                  <GithubIcon width={25} height={25} />
-                </a>
-              </li>
-              <li className="me-3">
-                <a
-                  className="text-body-secondary"
-                  href="https://www.linkedin.com/in/mateus-rosa-tum-7b803a1b6"
-                >
-                  <LinkedinIcon width={25} height={25} />
-                </a>
-              </li>
-              <li className="me-3">
-                <a
-                  className="text-body-secondary"
-                  href="https://www.instagram.com/mateustum/"
-                >
-                  <InstagramIcon width={25} height={25} />
-                </a>
-              </li>
-            </ul>
+          <Col lg={12}>
+            <span>© 2024 Mateus Tum</span>
           </Col>
         </Row>
-      </footer>
+      </Container>
+    </footer>
   );
 }
 
