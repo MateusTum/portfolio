@@ -32,10 +32,12 @@ const AboutSection = () => {
         </Col>
       </Row>
 
-      <Container className={`${styles.aboutContainer}`}>
+      <Container className={`${styles.aboutContainer} mx-auto`}>
+        {/* Main Row */}
         <Row
           className={`d-flex justify-content-center mx-1 ${styles.aboutRow}`}
         >
+          {/* #1 col */}
           <Col
             lg={3}
             md={12}
@@ -66,6 +68,7 @@ const AboutSection = () => {
             </p>
           </Col>
 
+          {/* #2 col */}
           <Col
             lg={5}
             md={12}
@@ -122,6 +125,7 @@ const AboutSection = () => {
             </Row>
           </Col>
 
+          {/* #3 col */}
           <Col
             lg={3}
             className={
@@ -149,8 +153,11 @@ const AboutSection = () => {
               <li>{t("About.RickAndMorty")}</li>
             </ul>
           </Col>
+
         </Row>
+
       </Container>
+      
     </Container>
   );
 };
