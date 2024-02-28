@@ -23,8 +23,9 @@
   left: 0px;
   min-height: 100px;
   min-width: 500px;
-  background: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(0, 0, 255, 1));
+  background: $secondary-color;
   text-align: left;
+  border-radius: 5px;
 
   h2 {
     position: relative;
