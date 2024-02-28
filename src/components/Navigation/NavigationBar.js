@@ -71,12 +71,12 @@ function NavigationBar() {
               >
                 {t("Navbar.Portfolio")}
               </Nav.Link>
-              <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {/* <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
                 {t("Navbar.MyWork")}
               </Nav.Link>
               <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
                 {t("Navbar.Contact")}
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
             <NavDropdown
               className={`ms-auto`}
