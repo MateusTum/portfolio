@@ -26,8 +26,6 @@
   border-radius: 5px;
   margin-bottom: 25px;
 
-  transition: transform 1s linear;
-
   h2 {
     position: relative;
     z-index: 0;
@@ -37,7 +35,7 @@
   }
 }
 
-@keyframes transformX {
+@keyframes transformX50 {
   from {
     transform: translateX(0);
   }
@@ -47,12 +45,25 @@
   }
 }
 
-.transformX50, .transformX0 {
+
+.transformX50 {
   transition: transform 1s linear;
   height: auto;
-  animation: transformX 1.5s ease-in-out forwards;
+  animation: transformX50 1.5s ease-in-out forwards;
+}
+
+@keyframes transformX0 {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
 }
 
 .transformX0 {
-  animation-direction: reverse; /* Reverse animation direction for transformX0 */
+  transition: transform 1s linear;
+  height: auto;
+  animation: transformX0 1.5s ease-in-out forwards;
 }

@@ -25,9 +25,9 @@ const AboutSection = () => {
       ref={ref}
       className={`${styles.aboutBackContainer} p-0 m-0`}
     >
-      <div className={`${styles.rhombus1}`} />
-      <div className={`${styles.rhombus2}`} />
-      <div className={`${styles.rhombus3}`} />
+      <div className={`${styles.rhombus1} ${styles.rhombus}`} />
+      <div className={`${styles.rhombus2} ${styles.rhombus}`} />
+      <div className={`${styles.rhombus3} ${styles.rhombus}`} />
       <Row className={`${styles.aboutTitle}`}>
         <Col className={inView ? `${styles.animatedH2}` : "invisible"}>
           <h2>{t("About.Header")}</h2>
