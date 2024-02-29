@@ -168,7 +168,7 @@ const ProjectsComponent = ({ inView }) => {
   return (
     <>
       {/* Filter Buttons */}
-      <Row className="mx-auto">
+      <Row className={inView ? `mx-auto slide-bottom-1` : `mx-auto hidden`}>
         {/* Filter Buttons */}
         <Col lg={6} className={`${styles.filterWrap}`}>
           <div className={`${styles.title}`}>
