@@ -255,7 +255,7 @@ const PortfolioSection = () => {
   // const { t, i18n } = useTranslation();
 
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
