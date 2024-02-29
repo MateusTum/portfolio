@@ -26,9 +26,8 @@
       width: 100%;
     }
 
-  }
-
-  .navlink:hover {
-    color: rgba(255, 0, 0, 0.8) !important;
+    &:hover {
+      color: rgba(255, 0, 0, 0.8);
+    }
   }
 }

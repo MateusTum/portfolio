@@ -12,8 +12,7 @@
   top: 0px;
   left: 0px;
   z-index: 0;
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding: 10% 0 5%;
   min-height: max-content;
 }
 
@@ -34,11 +33,11 @@
     z-index: 0;
     padding-top: 1%;
     font-size: 2.5em;
-    color: rgb(255, 255, 255);
+    color: #fff; /* Shorter color notation */
   }
 }
 
-@keyframes transformX50 {
+@keyframes transformX {
   from {
     transform: translateX(0);
   }
@@ -48,25 +47,12 @@
   }
 }
 
-
-.transformX50 {
+.transformX50, .transformX0 {
   transition: transform 1s linear;
   height: auto;
-  animation: transformX50 1.5s ease-in-out forwards;
-}
-
-@keyframes transformX0 {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0px);
-  }
+  animation: transformX 1.5s ease-in-out forwards;
 }
 
 .transformX0 {
-  transition: transform 1s linear;
-  height: auto;
-  animation: transformX0 1.5s ease-in-out forwards;
+  animation-direction: reverse; /* Reverse animation direction for transformX0 */
 }

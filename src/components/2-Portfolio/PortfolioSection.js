@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import styles from "./Portfolio.module.scss";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+
+import styles from "./Portfolio.module.scss";
 import tiles from "./Tiles.module.scss";
 
 import BootstrapIcon from "../SVGS/BootstrapIcon";
@@ -14,7 +16,7 @@ import ReactIcon from "../SVGS/ReactIcon";
 import SassIcon from "../SVGS/SassIcon";
 import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
 import SQLiteIcon from "../SVGS/SQLiteIcon";
-import { Link } from "react-router-dom";
+
 
 const CustomTitle = ({ inView }) => {
   const { t, i18n } = useTranslation();
@@ -50,7 +52,10 @@ const PortfolioSection = () => {
   });
 
   return (
-    <Container ref={ref} className={`${styles.portfolioBackContainer}`} fluid>
+    <Container 
+    id="portfolio"
+    ref={ref} 
+    className={`${styles.portfolioBackContainer}`} fluid>
 
       <Container className={`${styles.portfolioContainer}`}>
 

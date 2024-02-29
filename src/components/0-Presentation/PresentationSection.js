@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import styles from "./Presentation.module.scss";
 import { useInView } from "react-intersection-observer";
+import styles from "./Presentation.module.scss";
 
 const PresentationSection = () => {
   const { t, i18n } = useTranslation();
@@ -19,6 +19,7 @@ const PresentationSection = () => {
   return (
     // Main container
     <Container
+      id="presentation"
       ref={ref}
       fluid
       className={`${styles.presentationBackContainer} px-0`}

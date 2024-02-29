@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import styles from "./MyWork.module.scss";
 import { useInView } from "react-intersection-observer";
+import styles from "./MyWork.module.scss";
 
 const CustomTitle = ({ inView }) => {
   const { t, i18n } = useTranslation();

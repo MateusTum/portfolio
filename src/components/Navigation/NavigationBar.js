@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import styles from "./NavigationBar.module.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function NavigationBar() {
   const { t, i18n } = useTranslation();
@@ -46,6 +46,13 @@ function NavigationBar() {
     }
   };
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header>
       <Navbar
@@ -55,29 +62,35 @@ function NavigationBar() {
         fixed="top"
       >
         <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto"/>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              <Nav.Link
+                onClick={() => scrollToSection("presentation")}
+                className={`${styles.navlink}`}
+                to="/"
+              >
                 {t("Navbar.Home")}
               </Nav.Link>
-              <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              <Nav.Link
+                onClick={() => scrollToSection("about")}
+                className={`${styles.navlink}`}
+                to="/"
+              >
                 {t("Navbar.About")}
               </Nav.Link>
               <Nav.Link
-                as={Link}
                 className={`${styles.navlink}`}
-                to="/projects"
+                onClick={() => scrollToSection("portfolio")}
               >
                 {t("Navbar.Portfolio")}
               </Nav.Link>
-              {/* <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
-                {t("Navbar.MyWork")}
-              </Nav.Link>
-              <Nav.Link as={Link} className={`${styles.navlink}`} to="/">
+              {/* <Nav.Link onClick={() => scrollToSection('contact')} className={`${styles.navlink}`} to="/">
                 {t("Navbar.Contact")}
               </Nav.Link> */}
             </Nav>
+
+            {/* Change language dropdown */}
             <NavDropdown
               className={`ms-auto`}
               title={getLanguageNameWithFlag(i18n.language)}

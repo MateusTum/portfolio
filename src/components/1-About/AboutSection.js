@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import styles from "./About.module.scss";
 import { useInView } from "react-intersection-observer";
+import styles from "./About.module.scss";
 
-// Import cols
+// Import individual components
 import LanguagesCol from "./LanguagesCol";
 import FrameworksCol from "./FrameworksCol";
 import DatabasesCol from "./DatabasesCol";
 import LibsCol from "./LibsCol";
+
 
 const AboutSection = () => {
   const { t, i18n } = useTranslation();
@@ -19,6 +20,7 @@ const AboutSection = () => {
 
   return (
     <Container
+      id="about"
       fluid
       ref={ref}
       className={`${styles.aboutBackContainer} p-0 m-0`}

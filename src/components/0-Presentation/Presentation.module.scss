@@ -38,14 +38,14 @@
 .hoverAnimation {
     transition: transform 0.5s ease-in-out;
     cursor: default;
-}
 
-.hoverAnimation:hover {
-    transform: scale(1.1);
+    &:hover {
+        transform: scale(1.1);
+    }
 }
-
 
 /* === removing default button style ===*/
+
 .customName {
     margin: 0;
     height: auto;
@@ -53,10 +53,7 @@
     padding: 0;
     border: none;
     cursor: pointer;
-}
 
-/* button styling */
-.customName {
     --border-right: 6px;
     --text-stroke-color: #ffffff8e;
     --animation-color: #7c2727;
@@ -67,6 +64,11 @@
     position: relative;
     text-transform: uppercase;
     -webkit-text-stroke: 1px var(--text-stroke-color);
+
+    &:hover .nameHover {
+        width: 100%;
+        filter: drop-shadow(0 0 23px var(--animation-color));
+    }
 }
 
 /* this is the text, when you hover on button */
@@ -81,10 +83,4 @@
     overflow: hidden;
     transition: 0.5s;
     -webkit-text-stroke: 1px var(--animation-color);
-}
-
-/* hover */
-.customName:hover .nameHover {
-    width: 100%;
-    filter: drop-shadow(0 0 23px var(--animation-color))
 }
