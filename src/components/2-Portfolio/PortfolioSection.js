@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -17,8 +17,7 @@ import SassIcon from "../SVGS/SassIcon";
 import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
 import SQLiteIcon from "../SVGS/SQLiteIcon";
 
-
-const CustomTitle = ({ inView }) => {
+const CustomTitle = () => {
   const { t } = useTranslation();
   const [isClicked, setIsClicked] = useState(false);
 
@@ -29,7 +28,7 @@ const CustomTitle = ({ inView }) => {
 
   return (
     <>
-      <div
+      <Col
         className={
           isClicked
             ? `${styles.transformX50} ${styles.tab}`
@@ -38,7 +37,186 @@ const CustomTitle = ({ inView }) => {
         onClick={handleRowClick}
       >
         <h2>{t("Portfolio.Title")}</h2>
-      </div>
+      </Col>
+    </>
+  );
+};
+
+const ProjectsComponent = ({ inView }) => {
+  const categories = ["All", "API", "Frontend", "Backend", "Full Stack"];
+  const [activeCategories, setActiveCategories] = useState(["All"]);
+
+  const handleCategoryChange = (category, isChecked) => {
+    if (category === "All") {
+      if (isChecked) {
+        // If "All" is checked, set activeCategories to just "All"
+        setActiveCategories(["All"]);
+      } else {
+        // If "All" is unchecked, clear all selections
+        setActiveCategories([]);
+      }
+    } else {
+      if (isChecked) {
+        // Add the category to activeCategories, but also remove "All" if it's there
+        setActiveCategories(prev => [...prev.filter(cat => cat !== "All"), category]);
+      } else {
+        // Remove the category from activeCategories
+        setActiveCategories(prev => prev.filter(cat => cat !== category));
+      }
+    }
+  };
+
+  const technologyIcons = {
+    Bootstrap: BootstrapIcon,
+    Django: DjangoIcon,
+    HTML: HtmlIcon,
+    JavaScript: JSIcon,
+    Python: PythonIcon,
+    React: ReactIcon,
+    Sass: SassIcon,
+    PostgreSQL: PostgreeSqlIcon,
+    SQLite: SQLiteIcon,
+  };
+
+  const projects = [
+    {
+      id: 0,
+      title: "Social",
+      categories: ["API", "Frontend", "Backend", "Full Stack"],
+      description: "A social media website built on React and Django.",
+      link: "/project/0",
+      technologies: [
+        "JavaScript",
+        "Python",
+        "React",
+        "Django",
+        "PostgreSQL",
+        "HTML",
+        "Bootstrap",
+        "Sass",
+      ],
+    },
+
+    {
+      id: 1,
+      title: "Facial Recognition App",
+      categories: ["API", "Frontend", "Backend", "Full Stack"],
+      description:
+        "Project made in Python that uses the module face-recognition It is used to analyze surveillance cameras and look for criminals or missing people.",
+      link: "/project/1",
+      technologies: ["Python", "PostgreSQL"],
+    },
+
+    {
+      id: 2,
+      title: "Isabella Ferreira's Website",
+      categories: ["API", "Frontend", "Backend", "Full Stack"],
+      description:
+        "A website made for a lawyer, containing Sass animations, a form that sends an email, and a blog functionality.",
+      link: "/project/2",
+      technologies: [
+        "JavaScript",
+        "Python",
+        "React",
+        "Django",
+        "SQLite",
+        "HTML",
+        "Bootstrap",
+        "Sass",
+      ],
+    },
+
+    {
+      id: 3,
+      title: "Task Manager 1.0",
+      categories: ["Frontend"],
+      description:
+        "Basic task manager that creates, updates, and deletes tasks on local storage.",
+      link: "/project/3",
+      technologies: ["JavaScript", "HTML"],
+    },
+
+    {
+      id: 4,
+      title: "Task Manager API",
+      categories: ["API"],
+      description:
+        "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
+      link: "/project/4",
+      technologies: ["Python", "Django"],
+    },
+  ];
+
+  // Filter logic
+
+  function checkProjectTechnologies(project) {
+    for (let i = 0; i < activeCategories.length; i++) {
+      if ((project.categories).includes(activeCategories[i])) {
+        return project
+      }
+    }
+  }
+
+  let filteredProjects = null;
+
+  if (activeCategories.includes("All")) {
+    filteredProjects = projects
+  } else {
+    filteredProjects = projects.filter(checkProjectTechnologies)
+  }
+
+  return (
+    <>
+      {/* Filter Buttons */}
+      <Row className="mx-auto">
+        {/* Filter Buttons */}
+        <Col lg={6} className={`${styles.filterWrap}`}>
+          <div className={`${styles.title}`}>
+            <h4>FILTERS</h4>
+          </div>
+        <Form.Group controlId="formFilterCheckbox" className={`d-flex justify-content-center`}>
+          {categories.map((category) => (
+            <Form.Check
+              className="mx-auto"
+              key={category}
+              type="checkbox"
+              label={category}
+              onChange={(e) => handleCategoryChange(category, e.target.checked)}
+              checked={activeCategories.includes(category)}
+            />
+          ))}
+          </Form.Group>
+        </Col>
+      </Row>
+
+      {/* Project Cards */}
+      {/* Main Row for projects */}
+      <Row className={`${tiles.tilesWrap} d-flex justify-content-center`}>
+        {filteredProjects.map((project) => (
+          <Col key={project.id} className="mx-auto">
+            <Link to={project.link}>
+              <div className={inView ? `slide-bottom-1` : `hidden`}>
+                <li>
+                  <h2>{`0` + project.id}</h2>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+
+                  <Row className="d-flex justify-content-center my-auto">
+                    {project.technologies.map((tech) => {
+                      const IconComponent = technologyIcons[tech];
+                      return (
+                        <Col className="text-center my-1">
+                          <IconComponent key={tech} width={25} height={25} />
+                        </Col>
+                      );
+                    })}
+                  </Row>
+                </li>
+              </div>
+            </Link>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };
@@ -52,186 +230,20 @@ const PortfolioSection = () => {
   });
 
   return (
-    <Container 
-    id="portfolio"
-    ref={ref} 
-    className={`${styles.portfolioBackContainer}`} fluid>
-
+    <Container
+      id="portfolio"
+      ref={ref}
+      className={`${styles.portfolioBackContainer}`}
+      fluid
+    >
       <Container className={`${styles.portfolioContainer}`}>
-
         {/* Portfolio title div*/}
-      <Row className={inView ? `slideTitleAnimation` : `hidden`}>
-        <CustomTitle inView={inView} />
-      </Row>
-        {/* Main Row for projects */}
-        <Row className={`${tiles.tilesWrap} d-flex justify-content-center`}>
-          {/* Project  00 */}
-          <Col className="mx-auto">
-            <Link to={"/project/0"}>
-              <div className={inView ? `slide-bottom-1` : `hidden`}>
-                <li>
-                  <h2>00</h2>
-                  <h3>Social App</h3>
-                  <p>A social media website built on React and Django.</p>
-                  <Row className="d-flex justify-content-center my-auto">
-                    <Col className="text-center my-1">
-                      <JSIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <PythonIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <ReactIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <DjangoIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <PostgreeSqlIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <HtmlIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <BootstrapIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <SassIcon width={25} height={25} />
-                    </Col>
-                  </Row>
-                </li>
-              </div>
-            </Link>
-          </Col>
-
-          {/* Project 01 */}
-          <Col className="mx-auto">
-            <Link to={"/project/1"}>
-              <div className={inView ? `slide-bottom-1` : `hidden`}>
-                <li>
-                  <h2>01</h2>
-                  <h3>Facial Recognition App</h3>
-                  <p>
-                    Project made in Python that uses the module
-                    'face-recognition'.
-                    <br />
-                    It is used to analyze surveillance cameras and look for
-                    criminals or missing people.
-                  </p>
-                  <Row className="d-flex justify-content-center my-auto">
-                    <Col className="text-center my-1">
-                      <PythonIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <DjangoIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <PostgreeSqlIcon width={25} height={25} />
-                    </Col>
-                  </Row>
-                </li>
-              </div>
-            </Link>
-          </Col>
-
-          {/* Project 02 */}
-          <Col className="mx-auto">
-            <Link to={"/project/2"}>
-              <div className={inView ? `slide-bottom-2` : `hidden`}>
-                <li>
-                  <h2>02</h2>
-                  <h3>Isabella Ferreira Website</h3>
-                  <p>
-                    A website made for a lawyer, containing SCSS animations, a
-                    form that sends an email, and a blog functionality.
-                  </p>
-                  <Row className="d-flex justify-content-center my-auto">
-                    <Col className="text-center my-1">
-                      <JSIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <PythonIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <ReactIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <DjangoIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <SQLiteIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <HtmlIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <BootstrapIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <SassIcon width={25} height={25} />
-                    </Col>
-                  </Row>
-                </li>
-              </div>
-            </Link>
-          </Col>
-
-          {/* Project 03 */}
-          <Col className="mx-auto">
-            <Link to={"/project/3"}>
-              <div className={inView ? `slide-bottom-3` : `hidden`}>
-                <li>
-                  <h2>03</h2>
-                  <h3>Task Manager</h3>
-                  <p>A web app to create, update and track daily tasks.</p>
-                  <Row className="d-flex justify-content-center my-auto">
-                    <Col className="text-center my-1">
-                      <JSIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <PythonIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <ReactIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <DjangoIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <SQLiteIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <HtmlIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <BootstrapIcon width={25} height={25} />
-                    </Col>
-                    <Col className="text-center my-1">
-                      <SassIcon width={25} height={25} />
-                    </Col>
-                  </Row>
-                </li>
-              </div>
-            </Link>
-          </Col>
-
-          {/* Project 04 */}
-          <Col className="mx-auto">
-            <Link to={"/project/4"}>
-              <div className={inView ? `slide-bottom-4` : `hidden`}>
-                <li>
-                  <h2>04</h2>
-                  <h3>Project ###</h3>
-                  <p>########</p>
-                </li>
-              </div>
-            </Link>
-          </Col>
-
+        <Row className={inView ? `slideTitleAnimation mx-auto` : `hidden`}>
+          <CustomTitle inView={inView} />
         </Row>
-
+        {/* Projects component */}
+        <ProjectsComponent inView={inView} />
       </Container>
-      
     </Container>
   );
 };
