@@ -14,7 +14,7 @@ function NavigationBar() {
     } else {
       i18n.changeLanguage("en");
     }
-  }, []);
+  }, [i18n]);
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);

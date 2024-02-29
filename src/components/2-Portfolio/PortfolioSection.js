@@ -19,7 +19,7 @@ import SQLiteIcon from "../SVGS/SQLiteIcon";
 
 
 const CustomTitle = ({ inView }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [isClicked, setIsClicked] = useState(false);
 
   // Function to toggle the isClicked state

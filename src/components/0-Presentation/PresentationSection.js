@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useInView } from "react-intersection-observer";
 import styles from "./Presentation.module.scss";
 
 const PresentationSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [animate, setAnimate] = useState(false);
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
 
   useEffect(() => {
     setAnimate(true); // This will be set to true after the component mounts
@@ -20,7 +15,6 @@ const PresentationSection = () => {
     // Main container
     <Container
       id="presentation"
-      ref={ref}
       fluid
       className={`${styles.presentationBackContainer} px-0`}
     >
@@ -55,7 +49,7 @@ const PresentationSection = () => {
               lg={12}
               md={12}
               sm={12}
-              className={animate ? `${styles.slideAnimatedName}` : ``}>
+              className={animate ? `slide-right-2` : ``}>
                                   
                 <h3 className={`${styles.customName}`} data-text="Awesome">
                   <span className={`${styles.actualText}`}>&nbsp;{t("Presentation.Occupation")}&nbsp;</span>
@@ -66,7 +60,7 @@ const PresentationSection = () => {
               {/* Front */}
               <Col 
               lg={6}
-              className={animate ? `${styles.slideAnimatedName}` : ``}>
+              className={animate ? `slide-right-3` : ``}>
                 <h2 className={`${styles.customName}`} data-text="Awesome">
                   <span className={`${styles.actualText}`}>&nbsp;FRONTEND&nbsp;</span>
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;FRONTEND&nbsp;</span>
@@ -76,7 +70,7 @@ const PresentationSection = () => {
               {/* React */}
               <Col 
               lg={6}
-              className={animate ? `${styles.slideAnimatedName}` : ``}>
+              className={animate ? `slide-right-4` : ``}>
                 <h3 className={`${styles.customName}`} data-text="Awesome">
                   <span className={`${styles.actualText}`}>&nbsp;REACT&nbsp;</span>
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;REACT&nbsp;</span>
@@ -86,7 +80,7 @@ const PresentationSection = () => {
               {/* Back */}
               <Col 
               lg={6}
-              className={animate ? `${styles.slideAnimatedName}` : ``}>
+              className={animate ? `slide-right-5` : ``}>
                 <h2 className={`${styles.customName}`} data-text="Awesome">
                   <span className={`${styles.actualText}`}>&nbsp;BACKEND&nbsp;</span>
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;BACKEND&nbsp;</span>
@@ -96,7 +90,7 @@ const PresentationSection = () => {
               {/* Django */}
               <Col 
               lg={6}
-              className={animate ? `${styles.slideAnimatedName}` : ``}>
+              className={animate ? `slide-right-6` : ``}>
                 <h3 className={`${styles.customName}`} data-text="Awesome">
                   <span className={`${styles.actualText}`}>&nbsp;DJANGO&nbsp;</span>
                   <span aria-hidden="true" className={`${styles.nameHover}`}>&nbsp;DJANGO&nbsp;</span>

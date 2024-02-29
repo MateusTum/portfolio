@@ -12,7 +12,7 @@ import LibsCol from "./LibsCol";
 
 
 const AboutSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
