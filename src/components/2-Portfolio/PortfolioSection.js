@@ -145,6 +145,36 @@ const ProjectsComponent = ({ inView }) => {
       link: "/project/4",
       technologies: ["Python", "Django"],
     },
+
+    {
+      id: 5,
+      title: "Flight Deals Searcher",
+      categories: ["Backend"],
+      description:
+        "Python app that does webscrapping to look for flight offers and sends an email if a lower price is available",
+      link: "/project/5",
+      technologies: ["Python"],
+    },
+
+    {
+      id: 6,
+      title: "Weather Forecast",
+      categories: ["Backend"],
+      description:
+        "Python app that alerts the user via SMS about rain conditions",
+      link: "/project/6",
+      technologies: ["Python"],
+    },
+
+    {
+      id: 7,
+      title: "Stocks Monitor",
+      categories: ["Backend"],
+      description:
+        "App that alerts the user about changes in stock prices",
+      link: "/project/7",
+      technologies: ["Python"],
+    },
   ];
 
   // Filter logic
