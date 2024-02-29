@@ -8,7 +8,7 @@ const LoadingPage = () => {
       <Row>
         <Col className="text-center">
         <CloudsSvg />
-          <h1 class="loadingH1">Loading page</h1>
+          <h1 className="loadingH1">Loading page</h1>
         </Col>
       </Row>
     </Container>
