@@ -223,7 +223,7 @@ const ProjectsComponent = ({ inView }) => {
       {/* Main Row for projects */}
       <Row className={`${tiles.tilesWrap} d-flex justify-content-center`}>
         {filteredProjects.map((project) => (
-          <Col key={project.id} className="mx-auto">
+          <Col key={project.id} className="mx-auto px-0">
             <Link to={project.link}>
               <div className={inView ? `slide-bottom-1` : `hidden`}>
                 <li>
