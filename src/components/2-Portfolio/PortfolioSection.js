@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import React, { useState, useCallback, useMemo } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -16,6 +16,9 @@ import ReactIcon from "../SVGS/ReactIcon";
 import SassIcon from "../SVGS/SassIcon";
 import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
 import SQLiteIcon from "../SVGS/SQLiteIcon";
+
+import SearchFilter from "./SearchFilter";
+import projects from "./data/projects.json"; // Adjust the path as necessary
 
 const CustomTitle = () => {
   const { t } = useTranslation();
@@ -43,29 +46,9 @@ const CustomTitle = () => {
 };
 
 const ProjectsComponent = ({ inView }) => {
-  const categories = ["All", "API", "Frontend", "Backend", "Full Stack"];
-  const [activeCategories, setActiveCategories] = useState(["All"]);
+  const [filters, setFilters] = useState({ include: [], exclude: [] });
 
-  const handleCategoryChange = (category, isChecked) => {
-    if (category === "All") {
-      if (isChecked) {
-        // If "All" is checked, set activeCategories to just "All"
-        setActiveCategories(["All"]);
-      } else {
-        // If "All" is unchecked, clear all selections
-        setActiveCategories([]);
-      }
-    } else {
-      if (isChecked) {
-        // Add the category to activeCategories, but also remove "All" if it's there
-        setActiveCategories(prev => [...prev.filter(cat => cat !== "All"), category]);
-      } else {
-        // Remove the category from activeCategories
-        setActiveCategories(prev => prev.filter(cat => cat !== category));
-      }
-    }
-  };
-
+  // Insert all SVGS inside a dictionary
   const technologyIcons = {
     Bootstrap: BootstrapIcon,
     Django: DjangoIcon,
@@ -78,121 +61,48 @@ const ProjectsComponent = ({ inView }) => {
     SQLite: SQLiteIcon,
   };
 
-  const projects = [
-    {
-      id: 0,
-      title: "Social",
-      categories: ["API", "Frontend", "Backend", "Full Stack"],
-      description: "A social media website built on React and Django.",
-      link: "/project/0",
-      technologies: [
-        "JavaScript",
-        "Python",
-        "React",
-        "Django",
-        "PostgreSQL",
-        "HTML",
-        "Bootstrap",
-        "Sass",
-      ],
+  const filterProjects = useCallback(
+    (project) => {
+      const { include, exclude } = filters;
+      const { technologies } = project;
+      if (exclude.some((tech) => technologies.includes(tech))) return false;
+      if (include.some((tech) => !technologies.includes(tech))) return false;
+      if (
+        include.length === 0 ||
+        include.some((tech) => technologies.includes(tech))
+      )
+        return true;
+      return false;
     },
+    [filters]
+  );
 
-    {
-      id: 1,
-      title: "Facial Recognition App",
-      categories: ["API", "Frontend", "Backend", "Full Stack"],
-      description:
-        "Project made in Python that uses the module face-recognition It is used to analyze surveillance cameras and look for criminals or missing people.",
-      link: "/project/1",
-      technologies: ["Python", "PostgreSQL"],
-    },
+  const filteredProjects = useMemo(
+    () => projects.filter(filterProjects),
+    [filterProjects]
+  );
 
-    {
-      id: 2,
-      title: "Isabella Ferreira's Website",
-      categories: ["API", "Frontend", "Backend", "Full Stack"],
-      description:
-        "A website made for a lawyer, containing Sass animations, a form that sends an email, and a blog functionality.",
-      link: "/project/2",
-      technologies: [
-        "JavaScript",
-        "Python",
-        "React",
-        "Django",
-        "SQLite",
-        "HTML",
-        "Bootstrap",
-        "Sass",
-      ],
-    },
-
-    {
-      id: 3,
-      title: "Task Manager 1.0",
-      categories: ["Frontend"],
-      description:
-        "Basic task manager that creates, updates, and deletes tasks on local storage.",
-      link: "/project/3",
-      technologies: ["JavaScript", "HTML"],
-    },
-
-    {
-      id: 4,
-      title: "Task Manager API",
-      categories: ["API"],
-      description:
-        "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
-      link: "/project/4",
-      technologies: ["Python", "Django"],
-    },
-
-    {
-      id: 5,
-      title: "Flight Deals Searcher",
-      categories: ["Backend"],
-      description:
-        "Python app that does webscrapping to look for flight offers and sends an email if a lower price is available",
-      link: "/project/5",
-      technologies: ["Python"],
-    },
-
-    {
-      id: 6,
-      title: "Weather Forecast",
-      categories: ["Backend"],
-      description:
-        "Python app that alerts the user via SMS about rain conditions",
-      link: "/project/6",
-      technologies: ["Python"],
-    },
-
-    {
-      id: 7,
-      title: "Stocks Monitor",
-      categories: ["Backend"],
-      description:
-        "App that alerts the user about changes in stock prices",
-      link: "/project/7",
-      technologies: ["Python"],
-    },
-  ];
-
-  // Filter logic
-
-  function checkProjectTechnologies(project) {
-    for (let i = 0; i < activeCategories.length; i++) {
-      if ((project.categories).includes(activeCategories[i])) {
-        return project
-      }
+  function handleFilters(nextState, itemName) {
+    function clearFilters(itemName) {
+      setFilters((prevFilters) => ({
+        include: prevFilters.include.filter((item) => item !== itemName),
+        exclude: prevFilters.exclude.filter((item) => item !== itemName),
+      }));
     }
-  }
 
-  let filteredProjects = null;
+    clearFilters(itemName);
 
-  if (activeCategories.includes("All")) {
-    filteredProjects = projects
-  } else {
-    filteredProjects = projects.filter(checkProjectTechnologies)
+    if (nextState === "include") {
+      setFilters((prevFilters) => ({
+        include: [...prevFilters.include, itemName],
+        exclude: prevFilters.exclude,
+      }));
+    } else if (nextState === "exclude") {
+      setFilters((prevFilters) => ({
+        include: prevFilters.include,
+        exclude: [...prevFilters.exclude, itemName],
+      }));
+    }
   }
 
   return (
@@ -204,18 +114,11 @@ const ProjectsComponent = ({ inView }) => {
           <div className={`${styles.title}`}>
             <h4>FILTERS</h4>
           </div>
-        <Form.Group controlId="formFilterCheckbox" className={`d-flex justify-content-center`}>
-          {categories.map((category) => (
-            <Form.Check
-              className="mx-auto"
-              key={category}
-              type="checkbox"
-              label={category}
-              onChange={(e) => handleCategoryChange(category, e.target.checked)}
-              checked={activeCategories.includes(category)}
-            />
-          ))}
-          </Form.Group>
+          <Row className="align-items-center">
+            {Object.keys(technologyIcons).map((key) => (
+              <SearchFilter handleFilters={handleFilters} itemName={key} />
+            ))}
+          </Row>
         </Col>
       </Row>
 

@@ -1,0 +1,98 @@
+[
+    {
+        "id": 0,
+        "title": "Social",
+        "categories": ["API", "Frontend", "Backend", "Full Stack"],
+        "description": "A social media website built on React and Django.",
+        "link": "/project/0",
+        "technologies": [
+          "JavaScript",
+          "Python",
+          "React",
+          "Django",
+          "PostgreSQL",
+          "HTML",
+          "Bootstrap",
+          "Sass"
+        ]
+      },
+  
+      {
+        "id": 1,
+        "title": "Facial Recognition App",
+        "categories": ["API", "Frontend", "Backend", "Full Stack"],
+        "description":
+          "Project made in Python that uses the module face-recognition It is used to analyze surveillance cameras and look for criminals or missing people.",
+        "link": "/project/1",
+        "technologies": ["Python", "PostgreSQL"]
+      },
+  
+      {
+        "id": 2,
+        "title": "Isabella Ferreira's Website",
+        "categories": ["API", "Frontend", "Backend", "Full Stack"],
+        "description":
+          "A website made for a lawyer, containing Sass animations, a form that sends an email, and a blog functionality.",
+        "link": "/project/2",
+        "technologies": [
+          "JavaScript",
+          "Python",
+          "React",
+          "Django",
+          "SQLite",
+          "HTML",
+          "Bootstrap",
+          "Sass"
+        ]
+      },
+  
+      {
+        "id": 3,
+        "title": "Task Manager 1.0",
+        "categories": ["Frontend"],
+        "description":
+          "Basic task manager that creates, updates, and deletes tasks on local storage.",
+        "link": "/project/3",
+        "technologies": ["JavaScript", "HTML"]
+      },
+  
+      {
+        "id": 4,
+        "title": "Task Manager API",
+        "categories": ["API"],
+        "description":
+          "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
+        "link": "/project/4",
+        "technologies": ["Python", "Django"]
+      },
+  
+      {
+        "id": 5,
+        "title": "Flight Deals Searcher",
+        "categories": ["Backend"],
+        "description":
+          "Python app that does webscrapping to look for flight offers and sends an email if a lower price is available",
+        "link": "/project/5",
+        "technologies": ["Python"]
+      },
+  
+      {
+        "id": 6,
+        "title": "Weather Forecast",
+        "categories": ["Backend"],
+        "description":
+          "Python app that alerts the user via SMS about rain conditions",
+        "link": "/project/6",
+        "technologies": ["Python"]
+      },
+  
+      {
+        "id": 7,
+        "title": "Stocks Monitor",
+        "categories": ["Backend"],
+        "description": "App that alerts the user about changes in stock prices",
+        "link": "/project/7",
+        "technologies": ["Python"]
+      }
+  ]
+  
