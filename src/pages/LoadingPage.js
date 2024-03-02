@@ -15,7 +15,7 @@ const LoadingPage = () => {
             <div className={`${styles.control} ${styles['maximize']}`}></div>
           </div>
         </div>
-        <div class="text">Loading...</div>
+        <div className={`${styles.text}`}>Loading...</div>
       </div>
       <Row>
         <Col className="text-center">
