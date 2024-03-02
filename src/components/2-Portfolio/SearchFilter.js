@@ -82,6 +82,7 @@ const SearchFilter = ({ itemName, handleFilters }) => {
         }}
       >
         {symbol}
+        <br />
         <span> {itemName} </span>
       </Col>
     </>
