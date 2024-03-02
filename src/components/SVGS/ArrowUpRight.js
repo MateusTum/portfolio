@@ -1,12 +1,12 @@
 import React from "react";
 
-function ArrowUpRight() {
-    const yOffset = -2; // Move up by 50 pixels
+function ArrowUpRight( {width, height} ) {
+    const yOffset = -2;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
+      width={width}
+      height={height}
       fill="currentColor"
       className="bi bi-box-arrow-up-right"
       viewBox="0 0 16 16"

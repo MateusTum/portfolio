@@ -7,10 +7,46 @@ import { Link } from "react-router-dom";
 import styles from "./Portfolio.module.scss";
 import tiles from "./Tiles.module.scss";
 
-import Icons from "../SVGS/Icons"
+import Icons from "../SVGS/Icons";
+import ArrowUpRight from "../SVGS/ArrowUpRight";
+import HelpIcon from "../SVGS/HelpIcon";
 
 import SearchFilter from "./SearchFilter";
 import projects from "./data/projects.json"; // Adjust the path as necessary
+
+const Helper = () => {
+  const [showExplanation, setShowExplanation] = useState(false);
+
+  const ExplanationComponent = ({ text, text2 }) => {
+    return (
+      <>
+        <br />
+        <span>
+          {text}
+          <br />
+          {text2}
+        </span>
+      </>
+    );
+  };
+
+  const toggleExplanation = () => {
+    setShowExplanation(!showExplanation);
+  };
+
+  return (
+    <Col className="d-flex justify-content-center">
+    <h4>FILTERS</h4>
+      <HelpIcon width={18} height={18} onClick={toggleExplanation}/>
+      {showExplanation && (
+        <ExplanationComponent
+          text={`Plus Icon =  projects must have that tech`}
+          text2={`Minus Icon = projects can't have that tech`}
+        />
+      )}
+    </Col>
+  );
+};
 
 const ProjectsComponent = ({ inView }) => {
   const [filters, setFilters] = useState({ include: [], exclude: [] });
@@ -71,7 +107,7 @@ const ProjectsComponent = ({ inView }) => {
         {/* Filter Buttons */}
         <Col lg={8} className={`${styles.filterWrap}`}>
           <div className={`${styles.title}`}>
-            <h4>FILTERS</h4>
+            <Helper/>
           </div>
           <Row className="align-items-center">
             {Object.keys(Icons).map((key) => (
@@ -90,14 +126,21 @@ const ProjectsComponent = ({ inView }) => {
               <div className={inView ? `slide-bottom-1` : `hidden`}>
                 <li>
                   <h2>{`0` + project.id}</h2>
-                  <h3>{project.title} <TechnologyIcon tech={"ArrowUpRight"} width={15} height={15}/></h3>
+                  <h3>
+                    {project.title} <ArrowUpRight width={15} height={15} />
+                  </h3>
                   <p>{project.description}</p>
 
                   <Row className="d-flex justify-content-center my-auto">
                     {project.technologies.map((tech) => {
                       return (
                         <Col className="text-center my-1">
-                          <TechnologyIcon key={tech} tech={tech} width={25} height={25} />
+                          <TechnologyIcon
+                            key={tech}
+                            tech={tech}
+                            width={25}
+                            height={25}
+                          />
                         </Col>
                       );
                     })}
@@ -130,11 +173,9 @@ const PortfolioSection = () => {
       <Container className={`${styles.portfolioContainer}`}>
         {/* Portfolio title div*/}
         <Row className={inView ? `slideTitleAnimation mx-auto` : `hidden`}>
-        <Col
-        className={`${styles.tab}`}
-        >
-        <h2>{t("Portfolio.Title")}</h2>
-      </Col>
+          <Col className={`${styles.tab}`}>
+            <h2>{t("Portfolio.Title")}</h2>
+          </Col>
         </Row>
         {/* Projects component */}
         <ProjectsComponent inView={inView} />
