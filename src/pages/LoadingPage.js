@@ -1,25 +1,25 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CloudsSvg from "../components/SVGS/Clouds";
-import './Loading.scss';
+import styles from "./Loading.module.scss";
 
 const LoadingPage = () => {
   return (
     <Container fluid className="mx-0 p-0">
-      <div class="terminal-loader">
-          <div class="terminal-header">
-            <div class="terminal-title">Status</div>
-            <div class="terminal-controls">
-              <div class="control close"></div>
-              <div class="control minimize"></div>
-              <div class="control maximize"></div>
-            </div>
+      <div className={`${styles.terminalLoader}`}>
+        <div className={`${styles.terminalHeader}`}>
+          <div className={`${styles.terminalTitle}`}>Status</div>
+          <div className={`${styles.terminalControls}`}>
+            <div className={`${styles.control} ${styles['close']}`}></div>
+            <div className={`${styles.control} ${styles['minimize']}`}></div>
+            <div className={`${styles.control} ${styles['maximize']}`}></div>
           </div>
-          <div class="text">Loading...</div>
         </div>
+        <div class="text">Loading...</div>
+      </div>
       <Row>
         <Col className="text-center">
-        <CloudsSvg />
+          <CloudsSvg />
         </Col>
       </Row>
     </Container>

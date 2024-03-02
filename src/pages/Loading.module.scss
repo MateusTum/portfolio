@@ -1,0 +1,104 @@
+// Define a namespace for the module
+.terminalLoader {
+  // Use variables if needed
+  $border-color: #333;
+  $background-color: #1a1a1a;
+  $text-color: #0f0;
+  $header-background-color: #333;
+  $control-close-color: #e33;
+  $control-minimize-color: #ee0;
+  $control-maximize-color: #0b0;
+  $cursor-color: green;
+
+  border: 0.1em solid $border-color;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  padding: 1.5em 1em;
+  width: 12em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-sizing: border-box;
+
+  // Header styles
+  .terminalHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    background-color: $header-background-color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+
+    // Terminal controls
+    .terminalControls {
+      float: right;
+    }
+
+    // Control styles
+    .control {
+      display: inline-block;
+      width: 0.6em;
+      height: 0.6em;
+      margin-left: 0.4em;
+      border-radius: 50%;
+
+      &.close {
+        background-color: $control-close-color;
+      }
+
+      &.minimize {
+        background-color: $control-minimize-color;
+      }
+
+      &.maximize {
+        background-color: $control-maximize-color;
+      }
+    }
+
+    // Title styles
+    .terminalTitle {
+      float: left;
+      line-height: 1.5em;
+      color: #eee;
+    }
+  }
+
+  // Text animation styles
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid $cursor-color; // Cursor
+    animation: typeAndDelete 4s steps(11) infinite, blinkCursor 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+  }
+
+  // Keyframe animations
+  @keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes typeAndDelete {
+    0%, 10% {
+      width: 0;
+    }
+    45%, 55% {
+      width: 6.2em; // Adjust width based on content
+    }
+    90%, 100% {
+      width: 0;
+    }
+  }
+}
