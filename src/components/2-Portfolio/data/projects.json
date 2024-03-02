@@ -63,7 +63,7 @@
         "description":
           "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
         "link": "/project/4",
-        "technologies": ["Python", "Django"]
+        "technologies": ["Python", "Django", "Sass"]
       },
   
       {
