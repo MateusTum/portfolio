@@ -10,7 +10,6 @@ import FrameworksCol from "./FrameworksCol";
 import DatabasesCol from "./DatabasesCol";
 import LibsCol from "./LibsCol";
 
-
 const AboutSection = () => {
   const { t } = useTranslation();
   const { ref, inView } = useInView({
@@ -25,9 +24,19 @@ const AboutSection = () => {
       ref={ref}
       className={`${styles.aboutBackContainer} p-0 m-0`}
     >
-      <div className={`${styles.rhombus1} ${styles.rhombus}`} />
-      <div className={`${styles.rhombus2} ${styles.rhombus}`} />
-      <div className={`${styles.rhombus3} ${styles.rhombus}`} />
+      <div className={styles.cubeWrapper}>
+        <div className={styles.scene}>
+          <div className={styles.cube}>
+            <div className={`${styles.face} ${styles.front}`}></div>
+            <div className={`${styles.face} ${styles.back}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.bottom}`}></div>
+          </div>
+        </div>
+      </div>
+
       <Row className={`${styles.aboutTitle}`}>
         <Col className={inView ? `${styles.animatedH2}` : "invisible"}>
           <h2>{t("About.Header")}</h2>
@@ -35,6 +44,11 @@ const AboutSection = () => {
       </Row>
 
       <Container className={`${styles.aboutContainer} mx-auto`}>
+        <Col className={`${styles.rhombusWrapper} d-none d-md-block`}>
+          <div className={`${styles.rhombus1} ${styles.rhombus}`} />
+          <div className={`${styles.rhombus2} ${styles.rhombus}`} />
+          <div className={`${styles.rhombus3} ${styles.rhombus}`} />
+        </Col>
         {/* Main Row */}
         <Row
           className={`d-flex justify-content-center mx-1 ${styles.aboutRow}`}
@@ -46,7 +60,7 @@ const AboutSection = () => {
             sm={12}
             className={
               inView
-                ? `${styles.customDiv} slide-bottom-2 h-100 mt-lg-5 text-center`
+                ? `${styles.customDiv} slide-bottom-1 h-100 mt-lg-5 text-center`
                 : "invisible"
             }
           >
@@ -132,7 +146,7 @@ const AboutSection = () => {
             lg={3}
             className={
               inView
-                ? `slide-bottom-2 ${styles.customDiv} h-100 mt-lg-5`
+                ? `slide-bottom-1 ${styles.customDiv} h-100 mt-lg-5`
                 : "invisible"
             }
           >
@@ -155,11 +169,8 @@ const AboutSection = () => {
               <li>{t("About.RickAndMorty")}</li>
             </ul>
           </Col>
-
         </Row>
-
       </Container>
-      
     </Container>
   );
 };
