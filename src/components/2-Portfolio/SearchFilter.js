@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Col } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
+import Icons from "../SVGS/Icons";
 
 function SquareIcon() {
   return (
@@ -48,42 +49,88 @@ function DashIcon() {
   );
 }
 
-const SearchFilter = ({ itemName, handleFilters }) => {
-  const [state, setState] = useState("none"); // 'none', 'include', 'exclude'
+const SearchFilter = ({ filters, setFilters }) => {
+  const iconNames = Object.keys(Icons);
+
+  const [filterState, setFilterState] = useState(
+    iconNames.reduce((acc, name) => ({ ...acc, [name]: "none" }), {})
+  );
 
   const stateIcons = {
-    Square: SquareIcon(),
-    Plus: PlusIcon(),
-    Dash: DashIcon(),
+    Square: SquareIcon,
+    Plus: PlusIcon,
+    Dash: DashIcon,
   };
 
-  const handleClick = () => {
+  const updateFilters = (name, newState) => {
+    setFilters((prevFilters) => {
+      const { include, exclude } = prevFilters;
+      return {
+        include:
+          newState === "include"
+            ? [...include, name]
+            : include.filter((n) => n !== name),
+        exclude:
+          newState === "exclude"
+            ? [...exclude, name]
+            : exclude.filter((n) => n !== name),
+      };
+    });
+  };
+
+  const handleClick = (name) => {
+    const currentState = filterState[name];
     const nextState =
-      state === "none" ? "include" : state === "include" ? "exclude" : "none";
-    setState(nextState);
-    handleFilters(nextState, itemName);
+      currentState === "none"
+        ? "include"
+        : currentState === "include"
+        ? "exclude"
+        : "none";
+
+    setFilterState((prevState) => ({
+      ...prevState,
+      [name]: nextState,
+    }));
+
+    updateFilters(name, nextState);
   };
 
-  const symbol =
-    state === "none"
-      ? stateIcons["Square"]
-      : state === "include"
-      ? stateIcons["Plus"]
-      : stateIcons["Dash"];
+  const clearFilters = () => {
+    setFilterState(
+      iconNames.reduce((acc, name) => ({ ...acc, [name]: "none" }), {})
+    );
+    setFilters({ include: [], exclude: [] });
+  };
 
   return (
     <>
-      <Col
-        className="mx-auto"
-        onClick={handleClick}
-        style={{
-          cursor: "pointer",
-          userSelect: "none",
-        }}
-      >
-        {symbol}
-        <br />
-        <span> {itemName} </span>
+      {iconNames.map((name, index) => (
+        <Col
+          key={index}
+          className="mx-auto"
+          onClick={() => handleClick(name)}
+          style={{
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+        >
+          {React.createElement(
+            stateIcons[
+              filterState[name] === "none"
+                ? "Square"
+                : filterState[name] === "include"
+                ? "Plus"
+                : "Dash"
+            ]
+          )}
+          <br />
+          <span> {name} </span>
+        </Col>
+      ))}
+      <Col lg={12} className="mb-1">
+        <Button variant="dark" onClick={clearFilters}>
+          Clear Filters
+        </Button>
       </Col>
     </>
   );

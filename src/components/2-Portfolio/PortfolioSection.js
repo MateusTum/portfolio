@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -48,15 +48,16 @@ const Helper = () => {
   );
 };
 
+const TechnologyIcon = ({ tech, width, height }) => {
+  const IconComponent = Icons[tech];
+  return IconComponent ? (
+    <IconComponent width={width} height={height} />
+  ) : null;
+};
+
+
 const ProjectsComponent = ({ inView }) => {
   const [filters, setFilters] = useState({ include: [], exclude: [] });
-
-  const TechnologyIcon = ({ tech, width, height }) => {
-    const IconComponent = Icons[tech];
-    return IconComponent ? (
-      <IconComponent width={width} height={height} />
-    ) : null;
-  };
 
   const filterProjects = useCallback(
     (project) => {
@@ -79,29 +80,6 @@ const ProjectsComponent = ({ inView }) => {
     [filterProjects]
   );
 
-  function handleFilters(nextState, itemName) {
-    function clearFilters(itemName) {
-      setFilters((prevFilters) => ({
-        include: prevFilters.include.filter((item) => item !== itemName),
-        exclude: prevFilters.exclude.filter((item) => item !== itemName),
-      }));
-    }
-
-    clearFilters(itemName);
-
-    if (nextState === "include") {
-      setFilters((prevFilters) => ({
-        include: [...prevFilters.include, itemName],
-        exclude: prevFilters.exclude,
-      }));
-    } else if (nextState === "exclude") {
-      setFilters((prevFilters) => ({
-        include: prevFilters.include,
-        exclude: [...prevFilters.exclude, itemName],
-      }));
-    }
-  }
-
   return (
     <>
       {/* Filter Buttons */}
@@ -112,14 +90,7 @@ const ProjectsComponent = ({ inView }) => {
             <Helper />
           </div>
           <Row className="align-items-center">
-            {Object.keys(Icons).map((key) => (
-              <SearchFilter handleFilters={handleFilters} itemName={key} />
-            ))}
-            <Col lg={12} className="mb-1">
-              <Button variant="dark" className="disabled">
-                Clear Filters
-              </Button>
-            </Col>
+            <SearchFilter filters={filters} setFilters={setFilters} />
           </Row>
         </Col>
       </Row>
@@ -142,9 +113,8 @@ const ProjectsComponent = ({ inView }) => {
                   <Row className="d-flex justify-content-center my-auto">
                     {project.technologies.map((tech) => {
                       return (
-                        <Col className="text-center my-1">
+                        <Col key={tech} className="text-center my-1">
                           <TechnologyIcon
-                            key={tech}
                             tech={tech}
                             width={25}
                             height={25}
