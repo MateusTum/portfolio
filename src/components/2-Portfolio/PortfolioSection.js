@@ -12,7 +12,7 @@ import ArrowUpRight from "../SVGS/ArrowUpRight";
 import HelpIcon from "../SVGS/HelpIcon";
 
 import SearchFilter from "./SearchFilter";
-import projects from "./data/projects.json"; // Adjust the path as necessary
+import projects from "../data/projects.json"; // Adjust the path as necessary
 
 const Helper = () => {
   const [showExplanation, setShowExplanation] = useState(false);
@@ -51,9 +51,9 @@ const Helper = () => {
 const ProjectsComponent = ({ inView }) => {
   const [filters, setFilters] = useState({ include: [], exclude: [] });
 
-  const TechnologyIcon = ({ tech }) => {
+  const TechnologyIcon = ({ tech, width, height }) => {
     const IconComponent = Icons[tech];
-    return IconComponent ? <IconComponent width={25} height={25} /> : null;
+    return IconComponent ? <IconComponent width={width} height={height} /> : null;
   };
 
   const filterProjects = useCallback(
@@ -171,12 +171,14 @@ const PortfolioSection = () => {
       fluid
     >
       <Container className={`${styles.portfolioContainer}`}>
+        
         {/* Portfolio title div*/}
         <Row className={inView ? `slideTitleAnimation mx-auto` : `hidden`}>
           <Col className={`${styles.tab}`}>
             <h2>{t("Portfolio.Title")}</h2>
           </Col>
         </Row>
+
         {/* Projects component */}
         <ProjectsComponent inView={inView} />
       </Container>
