@@ -1,0 +1,89 @@
+@import "../styles/variables";
+
+.pageContainer {
+    // Borders
+    border: 2px solid;
+    border-color: $secondary-color;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    // Size
+    min-height: 100%;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+    background-color: $secondary-color;
+    position: relative;
+
+    top: -30px;
+
+    height: fit-content;
+    min-width: 200px;
+    width: max-content;
+
+
+    border-radius: 5px;
+}
+
+.versionWrapper {
+    position: relative;
+    left: 5%;
+    bottom: 15px;
+}
+
+.version {
+    text-align: center;
+
+    background-color: $tertiary-color;
+
+    position: absolute;
+    z-index: 2;
+
+    height: min-content;
+    width: max-content;
+
+    padding: 5px;
+    font-size: 100%;
+
+    border-radius: 5px;
+}
+
+.about {
+    text-align: left;
+    padding: 5px;
+    background-color: $secondary-color;
+    position: relative;
+
+    // Size
+    height: fit-content;
+    width: fit-content;
+
+    top: -20px;
+
+    border-radius: 5px;
+
+}
+
+.projectRow {
+    border-top: 2px solid;
+    border-color: $secondary-color;
+    border-radius: 10px;
+
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+.techRow {
+    width: fit-content;
+}
+
+.aboutRow {
+    width: fit-content;
+    .aboutText {
+        font-size: 1.2rem;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -36,8 +36,8 @@ const Helper = () => {
 
   return (
     <Col className="d-flex justify-content-center">
-    <h4>FILTERS</h4>
-      <HelpIcon width={18} height={18} onClick={toggleExplanation}/>
+      <h4>FILTERS</h4>
+      <HelpIcon width={18} height={18} onClick={toggleExplanation} />
       {showExplanation && (
         <ExplanationComponent
           text={`Plus Icon =  projects must have that tech`}
@@ -53,7 +53,9 @@ const ProjectsComponent = ({ inView }) => {
 
   const TechnologyIcon = ({ tech, width, height }) => {
     const IconComponent = Icons[tech];
-    return IconComponent ? <IconComponent width={width} height={height} /> : null;
+    return IconComponent ? (
+      <IconComponent width={width} height={height} />
+    ) : null;
   };
 
   const filterProjects = useCallback(
@@ -107,12 +109,17 @@ const ProjectsComponent = ({ inView }) => {
         {/* Filter Buttons */}
         <Col lg={8} className={`${styles.filterWrap}`}>
           <div className={`${styles.title}`}>
-            <Helper/>
+            <Helper />
           </div>
           <Row className="align-items-center">
             {Object.keys(Icons).map((key) => (
               <SearchFilter handleFilters={handleFilters} itemName={key} />
             ))}
+            <Col lg={12} className="mb-1">
+              <Button variant="dark" className="disabled">
+                Clear Filters
+              </Button>
+            </Col>
           </Row>
         </Col>
       </Row>
@@ -129,6 +136,7 @@ const ProjectsComponent = ({ inView }) => {
                   <h3>
                     {project.title} <ArrowUpRight width={15} height={15} />
                   </h3>
+                  <span>{project.version}</span>
                   <p>{project.description}</p>
 
                   <Row className="d-flex justify-content-center my-auto">
@@ -171,7 +179,6 @@ const PortfolioSection = () => {
       fluid
     >
       <Container className={`${styles.portfolioContainer}`}>
-        
         {/* Portfolio title div*/}
         <Row className={inView ? `slideTitleAnimation mx-auto` : `hidden`}>
           <Col className={`${styles.tab}`}>

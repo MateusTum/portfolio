@@ -2,6 +2,7 @@
     {
         "id": 0,
         "title": "Social",
+        "version": "Alpha 1.0",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description": "A social media website built on React and Django.",
         "link": "/project/0",
@@ -14,22 +15,26 @@
           "HTML",
           "Bootstrap",
           "Sass"
-        ]
+        ],
+        "about": "Social is a social media platform that allows users to create content, comment and follow each other."
       },
   
       {
         "id": 1,
         "title": "Facial Recognition App",
+        "version": "Dev",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description":
           "Project made in Python that uses the module face-recognition It is used to analyze surveillance cameras and look for criminals or missing people.",
         "link": "/project/1",
-        "technologies": ["Python", "PostgreSQL"]
+        "technologies": ["Python", "PostgreSQL"],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 2,
-        "title": "Isabella Ferreira's Website",
+        "title": "Ferreira's Website",
+        "version": "Beta 1.0",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description":
           "A website made for a lawyer, containing Sass animations, a form that sends an email, and a blog functionality.",
@@ -43,56 +48,67 @@
           "HTML",
           "Bootstrap",
           "Sass"
-        ]
+        ],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 3,
-        "title": "Task Manager 1.0",
+        "title": "Task Manager",
+        "version": "Dev",
         "categories": ["Frontend"],
         "description":
           "Basic task manager that creates, updates, and deletes tasks on local storage.",
         "link": "/project/3",
-        "technologies": ["JavaScript", "HTML"]
+        "technologies": ["JavaScript", "HTML"],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 4,
         "title": "Task Manager API",
+        "version": "Dev",
         "categories": ["API"],
         "description":
           "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
         "link": "/project/4",
-        "technologies": ["Python", "Django", "Sass"]
+        "technologies": ["Python", "Django", "Sass"],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 5,
         "title": "Flight Deals Searcher",
+        "version": "Dev",
         "categories": ["Backend"],
         "description":
           "Python app that does webscrapping to look for flight offers and sends an email if a lower price is available",
         "link": "/project/5",
-        "technologies": ["Python"]
+        "technologies": ["Python"],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 6,
         "title": "Weather Forecast",
+        "version": "Dev",
         "categories": ["Backend"],
         "description":
           "Python app that alerts the user via SMS about rain conditions",
         "link": "/project/6",
-        "technologies": ["Python"]
+        "technologies": ["Python"],
+        "about": "XXXXXXXXXXXXXX"
       },
   
       {
         "id": 7,
         "title": "Stocks Monitor",
+        "version": "Dev",
         "categories": ["Backend"],
         "description": "App that alerts the user about changes in stock prices",
         "link": "/project/7",
-        "technologies": ["Python"]
+        "technologies": ["Python"],
+        "about": "XXXXXXXXXXXXXX"
       }
   ]
   
