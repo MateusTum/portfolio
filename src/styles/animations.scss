@@ -1,11 +1,11 @@
-$slide-duration-1: 1.5s;
+$slide-duration-1: 1s;
 $slide-duration-2: 2s;
 $slide-duration-3: 2.5s;
 $slide-duration-4: 3s;
 $slide-duration-5: 3.5s;
 $slide-duration-6: 4s;
 
-$slide-bottom-duration: 2.5s;
+$slide-bottom-duration: 1.5s;
 
 @mixin slideAnimation($duration) {
   animation: slideRight $duration ease-out forwards;
