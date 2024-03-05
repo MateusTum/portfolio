@@ -13,13 +13,13 @@ function Footer() {
         <Row>
           <Col lg={12} className="d-flex justify-content-center">
             <div className="footer-card d-flex justify-content-center">
-              <a className="social-link1" href="https://www.instagram.com/mateustum/">
+              <a className="social-link1" href="https://www.instagram.com/mateustum/" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon width={35} height={35} />
               </a>
-              <a className="social-link2" href="https://www.linkedin.com/in/mateus-rosa-tum-7b803a1b6">
+              <a className="social-link2" href="https://www.linkedin.com/in/mateus-rosa-tum-7b803a1b6" target="_blank" rel="noopener noreferrer">
                 <LinkedinIcon width={35} height={35} />
               </a>
-              <a className="social-link3" href="https://github.com/MateusTum">
+              <a className="social-link3" href="https://github.com/MateusTum" target="_blank" rel="noopener noreferrer">
                 <GithubIcon width={35} height={35} />
               </a>
             </div>
