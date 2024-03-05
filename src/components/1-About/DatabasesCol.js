@@ -1,11 +1,13 @@
 import React from "react";
 import PostgreeSqlIcon from "../SVGS/PostgreeSqlIcon";
 import SQLiteIcon from "../SVGS/SQLiteIcon";
+import MongoDbIcon from "../SVGS/MongoDbIcon";
 
 const DatabasesCol = () => {
   const icons = [
     { Component: PostgreeSqlIcon, key: "postgree" },
     { Component: SQLiteIcon, key: "sqlite" },
+    { Component: MongoDbIcon, key: "mongo" },
   ];
 
   return (
