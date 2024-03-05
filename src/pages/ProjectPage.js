@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import layout from "./styles.module.scss";
 import Icons from "../components/SVGS/Icons";
 import projects from "../components/data/projects.json";
+import GithubIcon from "../components/SVGS/GithubIcon";
 
 const BaseLayout = ({ projectId }) => {
     const project = projects[projectId];
@@ -24,7 +25,9 @@ const BaseLayout = ({ projectId }) => {
         <Col className="d-flex justify-content-center">
           <h1 className={`${layout.title}`}>{project.title}</h1>
           <div className={`${layout.versionWrapper}`}>
-            <h2 className={`${layout.version}`}>{project.version}</h2>
+            <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+              <h2 className={`${layout.version}`}><GithubIcon width={20} height={20}/> {project.version}</h2>
+            </a>
           </div>
         </Col>
       </Row>
