@@ -1,51 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
-import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import styles from "./NavigationBar.module.scss";
 import { useLocation, Link } from "react-router-dom";
 
 function NavigationBar() {
-  const { t, i18n } = useTranslation();
-  const location = useLocation(); // Hook to get the current location object
-
-  useEffect(() => {
-    if (localStorage.getItem("language")) {
-      i18n.changeLanguage(localStorage.getItem("language"));
-    } else {
-      i18n.changeLanguage("en");
-    }
-  }, [i18n]);
-
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-    localStorage.setItem("language", language);
-  };
-
-  const getLanguageNameWithFlag = (languageCode) => {
-    switch (languageCode) {
-      case "en":
-        return (
-          <Image
-            src={`${process.env.PUBLIC_URL}/images/Flag_of_United_States.png`}
-            width={20}
-            height={20}
-            alt="Brazilian Flag"
-          />
-        );
-      case "pt":
-        return (
-          <Image
-            src={`${process.env.PUBLIC_URL}/images/Flag_of_Brazil.png`}
-            width={20}
-            height={20}
-            alt="USA Flag"
-          />
-        );
-      default:
-        return "🌐 Language";
-    }
-  };
+  const { t } = useTranslation();
+  const location = useLocation();
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -66,7 +28,7 @@ function NavigationBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto" />
           <Navbar.Collapse id="basic-navbar-nav">
               {location.pathname !== "/" ? (
-              <Nav>
+                <Nav className="ms-auto me-auto">
                   <Nav.Link
                     as={Link}
                     className={`${styles.navlink}`}
@@ -76,7 +38,7 @@ function NavigationBar() {
                   </Nav.Link>
                 </Nav>
               ) : (
-                <Nav className="ms-auto">
+                <Nav className="ms-auto me-auto">
                   <Nav.Link
                     onClick={() => scrollToSection("presentation")}
                     className={`${styles.navlink}`}
@@ -97,34 +59,14 @@ function NavigationBar() {
                   >
                     {t("Navbar.Portfolio")}
                   </Nav.Link>
+                  <Nav.Link
+                    className={`${styles.navlink}`}
+                    onClick={() => scrollToSection("concepts")}
+                  >
+                    {t("Navbar.Concepts")}
+                  </Nav.Link>
                   </Nav>
-    
               )}
-            
-            {/* Change language dropdown */}
-            <NavDropdown
-              className={`ms-auto`}
-              title={getLanguageNameWithFlag(i18n.language)}
-            >
-              <NavDropdown.Item onClick={() => changeLanguage("en")}>
-                <Image
-                  src={`${process.env.PUBLIC_URL}/images/Flag_of_United_States.png`}
-                  width={20}
-                  height={20}
-                  alt="Brazilian Flag"
-                />{" "}
-                English
-              </NavDropdown.Item>
-              <NavDropdown.Item onClick={() => changeLanguage("pt")}>
-                <Image
-                  src={`${process.env.PUBLIC_URL}/images/Flag_of_Brazil.png`}
-                  width={20}
-                  height={20}
-                  alt="USA Flag"
-                />{" "}
-                Português
-              </NavDropdown.Item>
-            </NavDropdown>
           </Navbar.Collapse>
         </Container>
       </Navbar>
