@@ -1,0 +1,65 @@
+@import "../../styles/variables";
+
+.conceptsBackContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: 150vh;
+  z-index: 8;
+}
+
+.conceptsContainer {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  padding: 5% 0 5%;
+  min-height: max-content;
+}
+
+.tab {
+  position: relative;
+  top: 0px;
+  z-index: 8;
+  background: $secondary-color;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 25px;
+
+  h2 {
+    position: relative;
+    z-index: 0;
+    padding-top: 1%;
+    font-size: 2.5em;
+    color: #fff; /* Shorter color notation */
+  }
+}
+
+
+.about {
+    text-align: left;
+    padding: 5px;
+    background-color: $secondary-color;
+    position: relative;
+
+    // Size
+    height: fit-content;
+    width: fit-content;
+
+    top: -20px;
+
+    border-radius: 5px;
+
+}
+
+.projectRow {
+    border-top: 2px solid;
+    border-color: $secondary-color;
+    width: fit-content;
+    border-radius: 10px;
+
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
