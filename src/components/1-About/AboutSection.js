@@ -24,18 +24,6 @@ const AboutSection = () => {
       ref={ref}
       className={`${styles.aboutBackContainer} p-0 m-0`}
     >
-      <div className={styles.cubeWrapper}>
-        <div className={styles.scene}>
-          <div className={styles.cube}>
-            <div className={`${styles.face} ${styles.front}`}></div>
-            <div className={`${styles.face} ${styles.back}`}></div>
-            <div className={`${styles.face} ${styles.right}`}></div>
-            <div className={`${styles.face} ${styles.left}`}></div>
-            <div className={`${styles.face} ${styles.top}`}></div>
-            <div className={`${styles.face} ${styles.bottom}`}></div>
-          </div>
-        </div>
-      </div>
 
       <Row className={`${styles.aboutTitle}`}>
         <Col className={inView ? `${styles.animatedH2}` : "invisible"}>

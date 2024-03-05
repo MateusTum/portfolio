@@ -18,6 +18,18 @@ const PresentationSection = () => {
       fluid
       className={`${styles.presentationBackContainer} px-0`}
     >
+            <div className={styles.cubeWrapper}>
+        <div className={styles.scene}>
+          <div className={styles.cube}>
+            <div className={`${styles.face} ${styles.front}`}></div>
+            <div className={`${styles.face} ${styles.back}`}></div>
+            <div className={`${styles.face} ${styles.right}`}></div>
+            <div className={`${styles.face} ${styles.left}`}></div>
+            <div className={`${styles.face} ${styles.top}`}></div>
+            <div className={`${styles.face} ${styles.bottom}`}></div>
+          </div>
+        </div>
+      </div>
       {/* Sub container */}
         <Container
           className={`${styles.presentationContainer}`}
