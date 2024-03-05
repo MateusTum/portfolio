@@ -6,6 +6,8 @@ import Project from "./pages/ProjectPage";
 import NavigationBar from "./components/Navigation/NavigationBar";
 import { useTranslation } from "react-i18next";
 import LoadingPage from "./pages/LoadingPage";
+import LanguageButton from "./components/Language/LanguageButton";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // Need to fix the language to not refresh everytime
@@ -35,11 +37,13 @@ function App() {
   return (
     <HashRouter basename="/">
       <NavigationBar />
+      <LanguageButton />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/project/:projectId" element={<Project />} />
         {/* Add more routes as needed */}
       </Routes>
+      <Footer />
     </HashRouter>
   );
 }
