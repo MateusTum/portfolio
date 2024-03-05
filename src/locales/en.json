@@ -21,6 +21,7 @@
     "Portuguese": "Brazilian Portuguese - Native",
     "English": "English - Fluent",
 
+
     "Likes": "I LIKE TO",
     "Dota": "Play Dota",
     "Clay": "Do clay sculpting",
@@ -39,8 +40,8 @@
 
   },
 
-  "Contact": {
-
+  "Concepts": {
+    "Title": "CONCEPTS"
   },
 
   "Navbar": {
@@ -48,6 +49,7 @@
     "About": "ABOUT ME",
     "MyWork": "MY WORK",
     "Portfolio": "PORTFOLIO",
-    "Contact": "CONTACT"
+    "Contact": "CONTACT",
+    "Concepts": "CONCEPTS"
   }
   }

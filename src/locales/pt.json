@@ -1,6 +1,6 @@
 {
   "Presentation": {
-    "Occupation": "DESENVOLVEDOR DE SOFTWARE"
+    "Occupation": "DESENVOLVEDOR"
 
   },
 
@@ -38,8 +38,8 @@
 
   },
 
-  "Contact": {
-
+  "Concepts": {
+    "Title": "CONCEITOS"
   },
 
   "Navbar": {
@@ -47,6 +47,7 @@
     "About": "SOBRE MIM",
     "MyWork": "MEU TRABALHO",
     "Portfolio": "PORTFÓLIO",
-    "Contact": "FALE CONOSCO"
+    "Contact": "FALE CONOSCO",
+    "Concepts": "CONCEITOS"
   }
   }
