@@ -1,34 +1,35 @@
-import React from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
-import styles from "./ContactSection.module.scss";
+import { Link } from "react-router-dom";
 
+import styles from "./Contact.module.scss";
 
-const ContactSection = () => {
-  const { t, i18n } = useTranslation();
+const contactSection = () => {
+  const { t } = useTranslation();
 
   const { ref, inView } = useInView({
-    threshold: 0.1,
     triggerOnce: true,
   });
 
   return (
-    <Container ref={ref} className={`${styles.myWorkBackContainer}`} fluid>
-      <Container className={`${styles.myWorkContainer}`}>
-        <div className={inView ? `${styles.backgroundShape} slide-right-3` : `${styles.backgroundShape} invisible`} />
-        <Row
-          className={
-            inView
-              ? `${styles.aniamatedH2} slide-right-3 mx-auto`
-              : `mx-auto invisible`
-          }
-        >
-          <h2>{t("myWorkTitle")}</h2>
+    <Container
+      id="contact"
+      ref={ref}
+      className={`${styles.contactBackContainer}`}
+      fluid
+    >
+      <Container className={`${styles.contactContainer}`}>
+        {/* Portfolio title div*/}
+        <Row className={inView ? `slideTitleAnimation mx-auto` : `hidden`}>
+          <Col className={`${styles.tab}`}>
+            <h2>{t("Contact.Title")}</h2>
+          </Col>
         </Row>
       </Container>
     </Container>
   );
 };
 
-export default ContactSection;
+export default ConceptsSection;
