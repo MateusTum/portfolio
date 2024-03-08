@@ -3,6 +3,7 @@
         "id": 0,
         "title": "Social",
         "version": "Alpha 1.0",
+        "source": "Open",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description": "A social media website built on React and Django.",
         "link": "/project/0",
@@ -24,11 +25,12 @@
         "id": 1,
         "title": "Facial Recognition App",
         "version": "Dev",
+        "source": "Closed",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description":
-          "Project made in Python that uses the module face-recognition It is used to analyze surveillance cameras and look for criminals or missing people.",
+          "Project that analyzes surveillance cameras in schools, public areas or prisions.",
         "link": "/project/1",
-        "technologies": ["Python", "PostgreSQL"],
+        "technologies": ["Python", "Django", "PostgreSQL", "MongoDb", "HTML"],
         "about": "XXXXXXXXXXXXXX",
         "githubLink": "https://github.com/MateusTum/portfolio"
       },
@@ -37,6 +39,7 @@
         "id": 2,
         "title": "Ferreira's Website",
         "version": "Beta 1.0",
+        "source": "Closed",
         "categories": ["API", "Frontend", "Backend", "Full Stack"],
         "description":
           "A website made for a lawyer, containing Sass animations, a form that sends an email, and a blog functionality.",
@@ -47,7 +50,6 @@
           "React",
           "Django",
           "SQLite",
-          "HTML",
           "Bootstrap",
           "Sass"
         ],
@@ -57,8 +59,9 @@
   
       {
         "id": 3,
-        "title": "Task Manager",
+        "title": "Simple Task Manager",
         "version": "Dev",
+        "source": "Open",
         "categories": ["Frontend"],
         "description":
           "Basic task manager that creates, updates, and deletes tasks on local storage.",
@@ -70,21 +73,23 @@
   
       {
         "id": 4,
-        "title": "Task Manager API",
+        "title": "Task Manager",
         "version": "Dev",
+        "source": "Open",
         "categories": ["API"],
         "description":
           "Task Manager API that allows users to log in, and do CRUDE operations on tasks.",
         "link": "/project/4",
-        "technologies": ["Python", "Django", "Sass"],
+        "technologies": ["Python", "Django", "React", "Sass"],
         "about": "XXXXXXXXXXXXXX",
-        "githubLink": "https://github.com/MateusTum/portfolio"
+        "githubLink": "https://github.com/MateusTum/task-manager"
       },
   
       {
         "id": 5,
         "title": "Flight Deals Searcher",
         "version": "Dev",
+        "source": "Open",
         "categories": ["Backend"],
         "description":
           "Python app that uses Tequila API to look for flight offers and alerts the user if a lower price is available",
@@ -98,6 +103,7 @@
         "id": 6,
         "title": "Weather Forecast",
         "version": "Dev",
+        "source": "Open",
         "categories": ["Backend"],
         "description":
           "Python app that alerts the user via SMS about rain conditions",
@@ -111,6 +117,7 @@
         "id": 7,
         "title": "Stocks Monitor",
         "version": "Dev",
+        "source": "Open",
         "categories": ["Backend"],
         "description": "App that alerts the user about changes in stock prices",
         "link": "/project/7",
@@ -123,10 +130,11 @@
         "id": 8,
         "title": "My Portfolio",
         "version": "1.0",
+        "source": "Open",
         "categories": ["Backend"],
         "description": "Yap, it's the website that you are currently looking at, you can find the code in my github :)",
         "link": "/project/8",
-        "technologies": ["React", "Sass"],
+        "technologies": ["React", "Sass", "Bootstrap"],
         "about": "XXXXXXXXXXXXXX",
         "githubLink": "https://github.com/MateusTum/portfolio"
       }
