@@ -108,6 +108,7 @@ const ProjectsComponent = ({ inView }) => {
                     {project.title} <ArrowUpRight width={15} height={15} />
                   </h3>
                   <span>{project.version}</span>
+                  <span>{project.source}</span>
                   <p>{project.description}</p>
 
                   <Row className="d-flex justify-content-center my-auto">
